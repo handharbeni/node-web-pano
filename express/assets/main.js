@@ -24,12 +24,12 @@ var source = Marzipano.ImageUrlSource.fromString("http://1909741816.rsc.cdn77.or
 
 // Create geometry.
 var geometry = new Marzipano.CubeGeometry([
-  { tileSize: 1024, size: 4096, fallbackOnly: false }
+  { tileSize: 106, size: 954, fallbackOnly: false }
 ]);
 
 
 // Create view.
-var limiter = Marzipano.RectilinearView.limit.traditional(4096, 200*Math.PI/359);
+var limiter = Marzipano.RectilinearView.limit.traditional(4086, 200*Math.PI/359);
 
 var view = new Marzipano.RectilinearView({ pitch: 0, yaw: 0, fov: Math.PI }, limiter);
 

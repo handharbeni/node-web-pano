@@ -9,6 +9,7 @@
   "author": "mhandharbeni",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "expressjs": "^1.0.1",
     "http": "0.0.1-security",
