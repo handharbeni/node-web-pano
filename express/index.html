@@ -1,36 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="description" content="Lobby" />
-<link rel="stylesheet" href="http://1909741816.rsc.cdn77.org/assets/reset.css">
-<link rel="stylesheet" href="http://1909741816.rsc.cdn77.org/assets/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.video-container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+      -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+	    transform: translate(0%, 0%);
+
+}
+.content {
+    position: absolute;
+    width: auto;
+    top: 70%;
+    left: 32%;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content {
+        position: absolute;
+        width: auto;
+        top: 70%;
+        left: 45%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content {
+        position: absolute;
+        width: auto;
+        top: 70%;
+        left: 45%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .content {
+        position: absolute;
+        width: auto;
+        top: 70%;
+        left: 47%;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .content {
+        position: absolute;
+        width: auto;
+        top: 70%;
+        left: 48%;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .content {
+        position: absolute;
+        width: auto;
+        top: 70%;
+        left: 48%;
+    }
+}
+
+</style>
 </head>
 <body>
-
-<div id="pano"></div>
-
-<!-- Different sources -->
-<div class="iframespot" id="iframespotright">
-  <div class="message">PANEL ON RIGHT</div>
+<div class="video-container">
+    <video playsinline autoplay muted loop poster="http://i3.ytimg.com/vi/vedBvGiXw2E/maxresdefault.jpg" id="bgvid">
+    </video>
 </div>
 
-<div class="iframespot" id="iframespotleft">
-  <div class="message">PANEL ON LEFT</div>
-</div>
-
-
-<ul id="iframeselect">
-  <li data-source="zoom">Zoom</li>
-  <li data-source="youtube">YouTube</li>
-</ul>
-
-
-<script src="http://1909741816.rsc.cdn77.org/assets/es5-shim.js"></script>
-<script src="http://1909741816.rsc.cdn77.org/assets/eventShim.js"></script>
-<script src="http://1909741816.rsc.cdn77.org/assets/requestAnimationFrame.js" ></script>
-<script src="http://1909741816.rsc.cdn77.org/assets/marzipano.js" ></script>
-
-<script src="assets/main.js"></script>
-
+<a class="content" href="lobby">
+    <img src="http://1909741816.rsc.cdn77.org/assets/icon/link.png">
+</a>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  axios
+    .get("videos")
+    .then(response => {
+        var video = document.getElementById('bgvid');
+        var source = document.createElement('source');
+        source.setAttribute('src', response.data);
+        video.appendChild(source);
+        video.play();
+    })
+    .catch(error => console.error(error));
+</script>
 </body>
 </html>
