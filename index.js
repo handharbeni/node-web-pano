@@ -5,7 +5,7 @@ const app = express();
 const compression = require('compression');
 const axios = require('axios');
 const youtubedl = require('youtube-dl');
-const video = youtubedl('https://www.youtube.com/watch?v=vedBvGiXw2E', [], { cwd: __dirname });
+const video = youtubedl('https://www.youtube.com/watch?v=vedBvGiXw2E', ['--format=136/137/mp4/bestvideo'], { cwd: __dirname });
 
 app.use(express.json());
 app.use(express.static("express"));
