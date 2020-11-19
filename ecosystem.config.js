@@ -10,15 +10,6 @@ module.exports = {
         exec_mode: "cluster",
         autorestart: false,
         watch: false,
-        kill_timeout: 3000,
-        listen_timeout: 3000,
-        ignore_watch: [
-          "upload",
-          "upload/files",
-          ".git",
-          "node_modules",
-          "tools/db/sqlite/ticketing.db",
-        ],
         max_memory_restart: "8G",
         env: {
           NODE_ENV: "development",
