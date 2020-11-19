@@ -20,11 +20,13 @@ var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 
 // Create source.
 //http://1909741816.rsc.cdn77.org/
-var source = Marzipano.ImageUrlSource.fromString("http://1909741816.rsc.cdn77.org/assets/image/lobi/{f}/{y}{x}.jpg");
+var baseUrl = "http://1909741816.rsc.cdn77.org/";
+baseUrl = "http://localhost:3000/"
+var source = Marzipano.ImageUrlSource.fromString(baseUrl+"assets/image/lobi/{f}/{y}{x}.jpg");
 
 // Create geometry.
 var geometry = new Marzipano.CubeGeometry([
-  { tileSize: 106, size: 954, fallbackOnly: false }
+  { tileSize: 512, size: 3072, fallbackOnly: false }
 ]);
 
 
