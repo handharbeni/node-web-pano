@@ -3,9 +3,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const compression = require('compression');
-const axios = require('axios');
 const youtubedl = require('youtube-dl');
-const video = youtubedl('https://www.youtube.com/watch?v=vedBvGiXw2E', ['--format=136/137/mp4/bestvideo'], { cwd: __dirname });
+const redis = require("redis");
+const client = redis.createClient({ expire: 60, detect_buffers: true });
+
+client.on("error", function(error) {
+  console.error(error);
+});
+
+const video = youtubedl('https://www.youtube.com/watch?v=vedBvGiXw2E', ['--format=22/17/18'], { cwd: __dirname });
 
 app.use(express.json());
 app.use(express.static("express"));
@@ -15,12 +21,19 @@ app.use('/lobby', function(req,res){
   res.sendFile(path.join(__dirname+'/express/index-lobi.html'));
 });
 app.use('/videos', async function(req, res){
-  video.on('info', function(info) {
-    res.send(info.url);
+  client.get('urlVideos', function(err, reply){
+    if(reply==null){
+      video.on('info', function (info) {
+        client.set('urlVideos', info.url);
+        res.send(info.url);
+      });
+    } else {
+      res.send(reply);
+    }
   })
 });
 app.use('/', function(req, res){
-  res.sendFile(path.join(__dirname+'/express/index.html'), data);
+  res.sendFile(path.join(__dirname+'/express/index.html'));
 });
 const server = http.createServer(app);
 const port = 3000;

@@ -16,6 +16,7 @@
     "expressjs": "^1.0.1",
     "http": "0.0.1-security",
     "path": "^0.12.7",
+    "redis": "^3.0.2",
     "youtube-dl": "^3.0.2",
     "ytdl-core": "^4.0.5"
   }
