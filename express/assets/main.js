@@ -21,7 +21,7 @@ var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 // Create source.
 //http://1909741816.rsc.cdn77.org/
 var baseUrl = "http://1909741816.rsc.cdn77.org/";
-baseUrl = "http://localhost:3000/"
+// baseUrl = "http://localhost:3000/"
 var source = Marzipano.ImageUrlSource.fromString(baseUrl+"assets/image/lobi/{f}/{y}{x}.jpg");
 
 // Create geometry.

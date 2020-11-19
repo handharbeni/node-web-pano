@@ -8,8 +8,8 @@ module.exports = {
         args: "Prasmul Pano",
         instances: "max",
         exec_mode: "cluster",
-        autorestart: true,
-        watch: true,
+        autorestart: false,
+        watch: false,
         kill_timeout: 3000,
         listen_timeout: 3000,
         ignore_watch: [
