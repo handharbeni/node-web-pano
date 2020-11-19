@@ -5,7 +5,7 @@ const app = express();
 const compression = require('compression');
 const youtubedl = require('youtube-dl');
 const redis = require("redis");
-const client = redis.createClient({ expire: 60, detect_buffers: true });
+const client = redis.createClient({ expire: 60 * 60 * 24, detect_buffers: true });
 
 client.on("error", function(error) {
   console.error(error);
