@@ -73,7 +73,7 @@
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
     var baseUrl = "http://1909741816.rsc.cdn77.org/";
-    baseUrl = "http://localhost:3000/"
+    // baseUrl = "http://localhost:3000/"
     var urlPrefix = baseUrl;
     var previewUrl = urlPrefix+ "assets/image/"+data.id+"/"+data.lvl+"/"+data.preview;
 
