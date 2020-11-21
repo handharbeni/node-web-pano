@@ -17,6 +17,7 @@ var data = {
   scenes: [
     {
       id: "lobby",
+      lvl: 2,
       name: "Lobby",
       levels: [
         { tileSize: 256, size: 256, fallbackOnly: true },
@@ -28,31 +29,28 @@ var data = {
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
       linkHotspots: [
         {
-            yaw: 0.76, 
+            yaw: 0.82,
             pitch: -0.052,
             rotation: 0,
             target: "booth",
-            perspective: { radius: 0 }
+            perspective: { radius: 1200, extraTransforms: "rotateY(-45deg)" }
         },
         {
-            yaw: -0.80,
+            yaw: -0.82,
             pitch: -0.052,
             rotation: 0,
             target: "hall-of-fame",
-            perspective: { radius: 0 }
-        }
-      ],
-      infoHotspots: [
+            perspective: { radius: 1200, extraTransforms: "rotateY(-45deg)" }
+        },
         {
-            yaw: -0.013, 
+            yaw: 0, 
             pitch: -0.052,
             rotation: 0,
-            title: 'Hall Wisuda',
-            text: 'On Progress',
-            // target: "hall-wisuda",
-            perspective: { radius: 0 }
+            target: 'hall-wisuda',
+            perspective: { radius: 800 }
         }
       ],
+      infoHotspots: [],
       externalLinkHostspot: [
         {
             yaw: 3.14,
@@ -66,6 +64,7 @@ var data = {
     {
         id: "hall-wisuda",
         name: "Hall Wisuda",
+        lvl: 1,
         levels: [
           { tileSize: 256, size: 256, fallbackOnly: true },
           { tileSize: 512, size: 3072 }
@@ -76,11 +75,11 @@ var data = {
         initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
         linkHotspots: [
           {
-            yaw: 0.79, 
-            pitch: -0.002,
-            rotation: 0,
-            target: "hall-of-fame",
-            perspective: { radius: 2640, extraTransforms: "rotateY(45deg)" },
+            yaw: -3.08, 
+            pitch: -0.15,
+            rotation: 0.05,
+            target: "lobby",
+            perspective: { radius: 1500},
           }
         ],
         infoHotspots: [],
@@ -89,6 +88,7 @@ var data = {
     {
       id: "hall-of-fame",
       name: "Hall Of Fame",
+      lvl: 1,
       levels: [
         { tileSize: 256, size: 256, fallbackOnly: true },
         { tileSize: 512, size: 3072 }
@@ -99,19 +99,57 @@ var data = {
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
       linkHotspots: [
           {
-              yaw: 3.29,
+              yaw: 3.09,
               pitch: -0.062,
               rotation: 0,
               target: "lobby",
               perspective: { radius: 0 },
           }
       ],
-      infoHotspots: [],
+      infoHotspots: [
+        {
+          yaw: 1.38,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Fame 4',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        },
+        {
+          yaw: 0.53,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Fame 3',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        },
+        {
+          yaw: -0.43,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Fame 2',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        },
+        {
+          yaw: -1.38,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Fame 1',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        }        
+      ],
       externalLinkHostspot: []
     },
     {
       id: "booth",
       name: "Booth",
+      lvl: 1,
       levels: [
         { tileSize: 256, size: 256, fallbackOnly: true },
         { tileSize: 512, size: 3072 }
@@ -122,16 +160,53 @@ var data = {
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
       linkHotspots: [
           {
-              yaw: 3.59,
-              pitch: -0.145,
+              yaw: 3.53,
+              pitch: -0.045,
               rotation: 0,
               target: "lobby",
               perspective: { radius: 1600 },
-          }
+          },
       ],
-      infoHotspots: [],
+      infoHotspots: [
+        {
+          yaw: 2.53,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Booth 4',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        },
+        {
+          yaw: 1.03,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Booth 3',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        },
+        {
+          yaw: -0.43,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Booth 2',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        },
+        {
+          yaw: -2.38,
+          pitch: -0.045,
+          rotation: 0,
+          title: 'Booth 1',
+          text: 'On Progress',
+          // target: "hall-wisuda",
+          perspective: { radius: 0 }
+        }
+      ],
       externalLinkHostspot: []
-    }
+    } 
   ],
   name: "Virtual Tour PRASMUL",
   settings: {

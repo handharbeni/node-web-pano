@@ -73,15 +73,11 @@
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
     var baseUrl = "http://1909741816.rsc.cdn77.org/";
-    // baseUrl = "http://localhost:3000/"
+    baseUrl = "http://localhost:3000/"
     var urlPrefix = baseUrl;
+    var previewUrl = urlPrefix+ "assets/image/"+data.id+"/"+data.lvl+"/"+data.preview;
 
-    var tileUrl = function(id, f, y, x) {
-      return urlPrefix + "/assets/image/"+ id +"/"+f+"/"+y+""+x+".jpg";
-    };
-
-    var previewUrl = urlPrefix+ "assets/image/"+data.id+"/"+data.preview;
-    var source = Marzipano.ImageUrlSource.fromString( urlPrefix + "/assets/image/"+ data.id +"/{f}/{y}{x}.jpg",
+    var source = Marzipano.ImageUrlSource.fromString( urlPrefix + "/assets/image/"+ data.id +"/"+data.lvl+"/{f}/image_{y}_{x}.jpeg",
     {  cubeMapPreviewUrl: previewUrl });
 
     var geometry = new Marzipano.CubeGeometry(data.levels);
