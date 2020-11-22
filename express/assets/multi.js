@@ -92,6 +92,20 @@
       pinFirstLevel: false
     });
 
+
+    data.embedHotspot.forEach(function(hotspot){
+      var element = createEmbededHotspot(hotspot);
+      var menuElement = createMenuEmbededHotspot(hotspot);
+      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
+      scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
+
+      // var switchElements = document.querySelectorAll('[data-source]');
+      // for (var i = 0; i < switchElements.length; i++) {
+      //   var element = switchElements[i];
+      //   addClickEvent(hotspot, element);
+      // }
+    })
+
     // Create link hotspots.
     data.linkHotspots.forEach(function(hotspot) {
       var element = createLinkHotspotElement(hotspot);
@@ -107,7 +121,7 @@
     data.infoHotspots.forEach(function(hotspot) {
       var element = createInfoHotspotElement(hotspot);
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch });
-    });
+    });    
 
     return {
       data: data,
@@ -115,6 +129,28 @@
       view: view
     };
   });
+
+  function switchHotspot(source, id) {
+    // var wrapper = document.getElementsByClassName('iframespot');
+    // console.log(wrapper);
+    // wrapper.innerHTML = source;
+    // var elements = document.getElementsByClassName('iframespot');
+    // if(elements.length > 0){
+    //   console.log(elements[0].childNodes);
+    //   elements[0].childNodes.remove();
+    //   // elements[0].childNodes.innerHTML = '';      
+    //   // elements[0].childNodes.appendChild(source);
+    // }
+    // updateEmbededHotspot(source);
+    var newNode = document.createElement('div');
+    newNode.innerHTML = source;
+    document.getElementsByClassName('iframespot')[0].replaceChild( newNode, document.getElementsByClassName('iframespot')[0].firstChild)
+  }
+  function addClickEvent(source, element) {
+    element.addEventListener('click', function() {
+      switchHotspot(source, element);
+    });
+  }
 
   // Set up autorotate, if enabled.
   var autorotate = Marzipano.autorotate({
@@ -306,6 +342,48 @@
     return wrapper;
   }
 
+  function createEmbededHotspot(hotspot){
+    var contentWrapper = document.createElement('div');
+    contentWrapper.classList.add('message');
+
+    var text = document.createTextNode("CHOOSE SOURCE TO SHOW");
+
+    contentWrapper.appendChild(text);
+    
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('iframespot');
+
+    wrapper.appendChild(contentWrapper);
+    return wrapper;
+  }
+
+  function updateEmbededHotspot(source){
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('iframespot');
+
+    var text = document.createTextNode(source);
+
+    wrapper.appendChild(text);
+    return wrapper;
+  }
+
+  function createMenuEmbededHotspot(hotspot){
+    var wrapper = document.createElement('ul');
+    wrapper.classList.add('iframeselect');
+
+    var i = 0;
+    hotspot.source.forEach(function(list){
+      var childList = document.createElement('li');
+      childList.setAttribute('data-source', list.name);
+
+      var text = document.createTextNode(list.name);
+      childList.appendChild(text);
+
+      wrapper.appendChild(childList);
+      addClickEvent(list.content, childList);
+    });
+    return wrapper;
+  }
   function createInfoHotspotElement(hotspot) {
 
     // Create wrapper element to hold icon and tooltip.

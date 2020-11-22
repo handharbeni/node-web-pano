@@ -59,7 +59,9 @@ var data = {
             target: "/",
             perspective: { radius: 900 }
         }
-      ]
+      ],
+      embedHotspot: [],
+      menuEmbedHotspot: []
     },
     {
         id: "hall-wisuda",
@@ -83,7 +85,29 @@ var data = {
           }
         ],
         infoHotspots: [],
-        externalLinkHostspot: []
+        externalLinkHostspot: [],
+        embedHotspot: [
+          {
+            yaw: -0.075, 
+            pitch: -0.27,
+            perspective: { radius: 2340, extraTransforms: "rotateX(5deg)" },
+            sourceLocation: {
+              yaw: 0.52, 
+              pitch: -0.39,
+              perspective: { radius: 1040, extraTransforms: "rotate(6deg)" },
+            },
+            source: [
+              {
+                name: 'Zoom',
+                content: '<iframe width="100%" height="1500" src="https://www.youtube.com/embed/ckOeCDI2ElU?version=3&loop=1&playlist=ckOeCDI2ElU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
+              },
+              {
+                name: 'Youtube',
+                content: '<iframe width="100%" height="1500" src="https://www.youtube.com/embed/vedBvGiXw2E?version=3&loop=1&playlist=vedBvGiXw2E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
+              }
+            ]
+          }
+        ],
     },
     {
       id: "hall-of-fame",
@@ -144,7 +168,9 @@ var data = {
           perspective: { radius: 0 }
         }        
       ],
-      externalLinkHostspot: []
+      externalLinkHostspot: [],
+      embedHotspot: [],
+      menuEmbedHotspot: []
     },
     {
       id: "booth",
@@ -205,7 +231,9 @@ var data = {
           perspective: { radius: 0 }
         }
       ],
-      externalLinkHostspot: []
+      externalLinkHostspot: [],
+      embedHotspot: [],
+      menuEmbedHotspot: []
     } 
   ],
   name: "Virtual Tour PRASMUL",
