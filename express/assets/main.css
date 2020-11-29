@@ -3,13 +3,12 @@ html, body{width:100%;height:100%;padding:0;margin:0;overflow:hidden;font-family
 #pano{position:absolute;top:0;left:0;width:100%;height:100%;}
 [data-source]{display:inline-block;cursor:pointer;}
 .iframespot{}
+.initialiframespot{}
 .iframeselect{width:180px;border-radius:10px;overflow:hidden;opacity:0.95;}
 .iframeselect li{width:100%;padding:1em;font-size:22px;text-align:center;background-color:#444;color:#ddd;transition:.3s background-color ease-in-out,
 .3s color ease-in-out;}
 .iframeselect li:hover{background-color:#666;color:#fff;}
 .iframespot {
-  width: 2500px;
-  height: 1500px;
   box-sizing: content-box;
   background: #32557f;
   color: #7eb4e2;
@@ -24,8 +23,8 @@ html, body{width:100%;height:100%;padding:0;margin:0;overflow:hidden;font-family
 .iframespot {
   background-color: #444;
   position: relative;
-  width: 2500px;
-  height: 1500px;
+  width: 2950px;
+  height: 1700px;
 }
 
 .iframespot .message {
@@ -35,6 +34,37 @@ html, body{width:100%;height:100%;padding:0;margin:0;overflow:hidden;font-family
   color: #ddd;
 }
 .iframespot .message{text-align:center;padding-top:190px;font-size:70px;color:#ddd;}
+
+
+.initialiframespot {
+  width: 2500px;
+  height: 1500px;
+  box-sizing: content-box;
+  background: #32557f;
+  color: #7eb4e2;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 100px;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+.initialiframespot {
+  background-color: #444;
+  position: relative;
+  width: 2500px;
+  height: 1500px;
+}
+
+.initialiframespot .initialmessage {
+  text-align: center;
+  padding-top: 190px;
+  font-size: 70px;
+  color: #ddd;
+}
+.initialiframespot .initialmessage{text-align:center;padding-top:190px;font-size:70px;color:#ddd;}
+
 #adsense{background-color:#fff;color:#000;}
 .adsense-fallback{padding:1em;position:absolute;top:0;left:0;}
 /* Info hotspot */

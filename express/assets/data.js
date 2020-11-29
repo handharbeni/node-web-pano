@@ -17,26 +17,25 @@ var data = {
   scenes: [
     {
       id: "lobby",
-      lvl: 2,
+      lvl: 1,
       name: "Lobby",
       levels: [
         { tileSize: 256, size: 256, fallbackOnly: true },
         { tileSize: 512, size: 3072 }
       ],
-      // preview: "{ cubeMapPreviewUrl: 'http://localhost:3000/assets/image/lobby/preview.jpg'}",
       preview: "preview.jpg",
       faceSize: 4096,
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
       linkHotspots: [
         {
-            yaw: 0.82,
+            yaw: 0.73,
             pitch: -0.052,
             rotation: 0,
             target: "booth",
             perspective: { radius: 1200, extraTransforms: "rotateY(-45deg)" }
         },
         {
-            yaw: -0.82,
+            yaw: -0.7,
             pitch: -0.052,
             rotation: 0,
             target: "hall-of-fame",
@@ -61,7 +60,8 @@ var data = {
         }
       ],
       embedHotspot: [],
-      menuEmbedHotspot: []
+      menuEmbedHotspot: [],
+      initialEmbed: []
     },
     {
         id: "hall-wisuda",
@@ -71,7 +71,6 @@ var data = {
           { tileSize: 256, size: 256, fallbackOnly: true },
           { tileSize: 512, size: 3072 }
         ],
-        // preview: "{ cubeMapPreviewUrl: 'http://localhost:3000/assets/image/lobby/preview.jpg'}",
         preview: "preview.jpg",
         faceSize: 4096,
         initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
@@ -81,33 +80,44 @@ var data = {
             pitch: -0.15,
             rotation: 0.05,
             target: "lobby",
-            perspective: { radius: 1500},
+            perspective: { radius: 1500 },
           }
         ],
         infoHotspots: [],
         externalLinkHostspot: [],
         embedHotspot: [
           {
-            yaw: -0.075, 
-            pitch: -0.27,
-            perspective: { radius: 2340, extraTransforms: "rotateX(5deg)" },
+            yaw: 0, 
+            pitch: 0,
+            perspective: { radius: 1640 },
             sourceLocation: {
-              yaw: 0.52, 
-              pitch: -0.39,
-              perspective: { radius: 1040, extraTransforms: "rotate(6deg)" },
+              yaw: 0.8, 
+              pitch: -0.2,
+              perspective: { radius: 940, extraTransforms: "rotate(1deg)" },
             },
             source: [
               {
                 name: 'Zoom',
-                content: '<iframe width="100%" height="1500" src="https://www.youtube.com/embed/ckOeCDI2ElU?version=3&loop=1&playlist=ckOeCDI2ElU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
+                content: '<iframe width="100%" height="1700" src="https://www.youtube.com/embed/ckOeCDI2ElU?version=3&loop=1&playlist=ckOeCDI2ElU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
               },
               {
                 name: 'Youtube',
-                content: '<iframe width="100%" height="1500" src="https://www.youtube.com/embed/vedBvGiXw2E?version=3&loop=1&playlist=vedBvGiXw2E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
+                content: '<iframe width="100%" height="1700" src="https://www.youtube.com/embed/vedBvGiXw2E?version=3&loop=1&playlist=vedBvGiXw2E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
+              },
+              {
+                name: 'Close',
+                content: ''
               }
             ]
           }
         ],
+        initialEmbed: [
+          {
+            yaw: -0.04, 
+            pitch: -0.2,
+            perspective: { radius: 2700 },
+          }
+        ]
     },
     {
       id: "hall-of-fame",
@@ -117,7 +127,6 @@ var data = {
         { tileSize: 256, size: 256, fallbackOnly: true },
         { tileSize: 512, size: 3072 }
       ],
-      // preview: "{ cubeMapPreviewUrl: 'http://localhost:3000/assets/image/lobby/preview.jpg'}",
       preview: "preview.jpg",
       faceSize: 4096,
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
@@ -170,7 +179,8 @@ var data = {
       ],
       externalLinkHostspot: [],
       embedHotspot: [],
-      menuEmbedHotspot: []
+      menuEmbedHotspot: [],
+      initialEmbed: []
     },
     {
       id: "booth",
@@ -180,7 +190,6 @@ var data = {
         { tileSize: 256, size: 256, fallbackOnly: true },
         { tileSize: 512, size: 3072 }
       ],
-      // preview: "{ cubeMapPreviewUrl: 'http://localhost:3000/assets/image/lobby/preview.jpg'}",
       preview: "preview.jpg",
       faceSize: 4096,
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
@@ -233,7 +242,8 @@ var data = {
       ],
       externalLinkHostspot: [],
       embedHotspot: [],
-      menuEmbedHotspot: []
+      menuEmbedHotspot: [],
+      initialEmbed: []
     } 
   ],
   name: "Virtual Tour PRASMUL",

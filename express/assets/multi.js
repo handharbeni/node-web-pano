@@ -72,12 +72,11 @@
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
-    var baseUrl = "http://1909741816.rsc.cdn77.org/";
-    // baseUrl = "http://localhost:3000/"
+    var baseUrl = "http://1719132208.rsc.cdn77.org/";
     var urlPrefix = baseUrl;
     var previewUrl = urlPrefix+ "assets/image/"+data.id+"/"+data.lvl+"/"+data.preview;
 
-    var source = Marzipano.ImageUrlSource.fromString( urlPrefix + "/assets/image/"+ data.id +"/"+data.lvl+"/{f}/image_{y}_{x}.jpeg",
+    var source = Marzipano.ImageUrlSource.fromString( urlPrefix + "assets/image/"+ data.id +"/"+data.lvl+"/{f}/image_{y}_{x}.jpeg",
     {  cubeMapPreviewUrl: previewUrl });
 
     var geometry = new Marzipano.CubeGeometry(data.levels);
@@ -93,24 +92,31 @@
     });
 
 
-    data.embedHotspot.forEach(function(hotspot){
-      var element = createEmbededHotspot(hotspot);
-      var menuElement = createMenuEmbededHotspot(hotspot);
-      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
-      scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
+    // data.embedHotspot.forEach(function(hotspot){
+    //   var element = createEmbededHotspot(hotspot);
+    //   var menuElement = createMenuEmbededHotspot(hotspot);
+    //   scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
+    //   scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
 
-      // var switchElements = document.querySelectorAll('[data-source]');
-      // for (var i = 0; i < switchElements.length; i++) {
-      //   var element = switchElements[i];
-      //   addClickEvent(hotspot, element);
-      // }
-    })
+    //   // var switchElements = document.querySelectorAll('[data-source]');
+    //   // for (var i = 0; i < switchElements.length; i++) {
+    //   //   var element = switchElements[i];
+    //   //   addClickEvent(hotspot, element);
+    //   // }
+    // })
 
     // Create link hotspots.
     data.linkHotspots.forEach(function(hotspot) {
       var element = createLinkHotspotElement(hotspot);
       scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective });
     });
+
+    data.initialEmbed.forEach(function(hotspot) {
+      var element = createInitialEmbededHotspot(hotspot, data, scene);
+      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective });
+
+    });
+
 
     data.externalLinkHostspot.forEach(function(hotspot){
       var element = createExternalLinkHotspotElement(hotspot);
@@ -130,26 +136,30 @@
     };
   });
 
-  function switchHotspot(source, id) {
-    // var wrapper = document.getElementsByClassName('iframespot');
-    // console.log(wrapper);
-    // wrapper.innerHTML = source;
-    // var elements = document.getElementsByClassName('iframespot');
-    // if(elements.length > 0){
-    //   console.log(elements[0].childNodes);
-    //   elements[0].childNodes.remove();
-    //   // elements[0].childNodes.innerHTML = '';      
-    //   // elements[0].childNodes.appendChild(source);
-    // }
-    // updateEmbededHotspot(source);
+  function switchHotspot(source) {
     var newNode = document.createElement('div');
     newNode.innerHTML = source;
     document.getElementsByClassName('iframespot')[0].replaceChild( newNode, document.getElementsByClassName('iframespot')[0].firstChild)
   }
   function addClickEvent(source, element) {
     element.addEventListener('click', function() {
-      switchHotspot(source, element);
+      switchHotspot(source);
     });
+  }
+
+  function removeClickEvent(element){
+    element.addEventListener('click', function(){
+      removeEmbeded()
+    })
+  }
+  function generateEmbedHotspot(data, scene){
+      data.embedHotspot.forEach(function(hotspot){
+        var element = createEmbededHotspot(hotspot);
+        var menuElement = createMenuEmbededHotspot(hotspot);
+        scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
+        scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
+      })  
+      switchHotspot(data.embedHotspot[0].source[0].content);
   }
 
   // Set up autorotate, if enabled.
@@ -342,11 +352,51 @@
     return wrapper;
   }
 
+  function createInitialEmbededHotspot(hotspot, data, scene) {
+
+    // Create wrapper element to hold icon and tooltip.
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('hotspot');
+    wrapper.classList.add('initial-embed');
+
+    // Create image element.
+    var icon = document.createElement('img');
+    icon.src = 'assets/icon/bumper.gif';
+    icon.classList.add('link-hotspot-icon');
+
+    // Set rotation transform.
+    var transformProperties = [ '-ms-transform', '-webkit-transform', 'transform' ];
+    for (var i = 0; i < transformProperties.length; i++) {
+      var property = transformProperties[i];
+      icon.style[property] = 'rotate(' + hotspot.rotation + 'rad)';
+    }
+
+    // Add click event handler.
+    wrapper.addEventListener('click', function() {
+      generateEmbedHotspot(data, scene);
+    });
+
+    // Prevent touch and scroll events from reaching the parent element.
+    // This prevents the view control logic from interfering with the hotspot.
+    stopTouchAndScrollEventPropagation(wrapper);
+
+    // Create tooltip element.
+    var tooltip = document.createElement('div');
+    tooltip.classList.add('hotspot-tooltip');
+    tooltip.classList.add('link-hotspot-tooltip');
+    // tooltip.innerHTML = findSceneDataById(hotspot.target).name;
+
+    wrapper.appendChild(icon);
+    // wrapper.appendChild(tooltip);
+
+    return wrapper;
+  }
+
   function createEmbededHotspot(hotspot){
     var contentWrapper = document.createElement('div');
     contentWrapper.classList.add('message');
 
-    var text = document.createTextNode("CHOOSE SOURCE TO SHOW");
+    var text = document.createTextNode("");
 
     contentWrapper.appendChild(text);
     
@@ -354,6 +404,7 @@
     wrapper.classList.add('iframespot');
 
     wrapper.appendChild(contentWrapper);
+    wrapper.style.display = "none";
     return wrapper;
   }
 
@@ -370,6 +421,7 @@
   function createMenuEmbededHotspot(hotspot){
     var wrapper = document.createElement('ul');
     wrapper.classList.add('iframeselect');
+    wrapper.style.display = "none";
 
     var i = 0;
     hotspot.source.forEach(function(list){
@@ -380,10 +432,21 @@
       childList.appendChild(text);
 
       wrapper.appendChild(childList);
-      addClickEvent(list.content, childList);
+
+      if (list.name === "Close"){
+        removeClickEvent(childList);
+      } else {
+        addClickEvent(list.content, childList);
+      }
     });
     return wrapper;
   }
+
+  function removeEmbeded(){
+    document.getElementsByClassName('iframespot')[0].remove();
+    document.getElementsByClassName("iframeselect")[0].remove();
+  }
+
   function createInfoHotspotElement(hotspot) {
 
     // Create wrapper element to hold icon and tooltip.
