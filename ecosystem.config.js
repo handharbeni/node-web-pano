@@ -9,7 +9,7 @@ module.exports = {
         instances: "max",
         exec_mode: "cluster",
         watch: false,
-        max_memory_restart: "8G",
+        max_memory_restart: "10G",
         env: {
           NODE_ENV: "development",
         },
