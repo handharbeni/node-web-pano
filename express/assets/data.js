@@ -115,7 +115,8 @@ var data = {
           {
             yaw: -0.04, 
             pitch: -0.2,
-            perspective: { radius: 2700 },
+            perspective: { radius: 2600 },
+            target: "#"
           }
         ]
     },
