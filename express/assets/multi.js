@@ -287,7 +287,7 @@
     wrapper.classList.add('link-hotspot');
 
     var icon = document.createElement('img');
-    icon.src = 'assets/icon/link.png';
+    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/link.png';
     icon.classList.add('link-hotspot-icon');
 
     var transformProperties = [ '-ms-transform', '-webkit-transform', 'transform' ];
@@ -321,7 +321,7 @@
 
     // Create image element.
     var icon = document.createElement('img');
-    icon.src = 'assets/icon/link.png';
+    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/link.png';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
@@ -361,7 +361,7 @@
 
     // Create image element.
     var icon = document.createElement('img');
-    icon.src = 'assets/icon/bumper.gif';
+    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
@@ -462,7 +462,7 @@
     var iconWrapper = document.createElement('div');
     iconWrapper.classList.add('info-hotspot-icon-wrapper');
     var icon = document.createElement('img');
-    icon.src = 'assets/icon/info.png';
+    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png';
     icon.classList.add('info-hotspot-icon');
     iconWrapper.appendChild(icon);
 
@@ -478,7 +478,7 @@
     var closeWrapper = document.createElement('div');
     closeWrapper.classList.add('info-hotspot-close-wrapper');
     var closeIcon = document.createElement('img');
-    closeIcon.src = 'assets/icon/close.png';
+    closeIcon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/close.png';
     closeIcon.classList.add('info-hotspot-close-icon');
     closeWrapper.appendChild(closeIcon);
 
