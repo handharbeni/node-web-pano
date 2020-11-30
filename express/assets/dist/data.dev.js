@@ -158,7 +158,7 @@ var data = {
       fov: Math.PI
     },
     linkHotspots: [{
-      yaw: 3.09,
+      yaw: -2.55,
       pitch: -0.062,
       rotation: 0,
       target: "lobby",
@@ -167,40 +167,10 @@ var data = {
       }
     }],
     infoHotspots: [{
-      yaw: 1.38,
-      pitch: -0.045,
+      yaw: 0,
+      pitch: 0,
       rotation: 0,
-      title: 'Fame 4',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }, {
-      yaw: 0.53,
-      pitch: -0.045,
-      rotation: 0,
-      title: 'Fame 3',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }, {
-      yaw: -0.43,
-      pitch: -0.045,
-      rotation: 0,
-      title: 'Fame 2',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }, {
-      yaw: -1.38,
-      pitch: -0.045,
-      rotation: 0,
-      title: 'Fame 1',
+      title: 'Fame',
       text: 'On Progress',
       // target: "hall-wisuda",
       perspective: {
@@ -231,7 +201,7 @@ var data = {
       fov: Math.PI
     },
     linkHotspots: [{
-      yaw: 3.53,
+      yaw: -3.22,
       pitch: -0.045,
       rotation: 0,
       target: "lobby",
@@ -240,40 +210,30 @@ var data = {
       }
     }],
     infoHotspots: [{
-      yaw: 2.53,
-      pitch: -0.045,
-      rotation: 0,
-      title: 'Booth 4',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }, {
-      yaw: 1.03,
-      pitch: -0.045,
-      rotation: 0,
-      title: 'Booth 3',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }, {
-      yaw: -0.43,
-      pitch: -0.045,
-      rotation: 0,
-      title: 'Booth 2',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }, {
-      yaw: -2.38,
+      yaw: -2.2,
       pitch: -0.045,
       rotation: 0,
       title: 'Booth 1',
+      text: 'On Progress',
+      // target: "hall-wisuda",
+      perspective: {
+        radius: 0
+      }
+    }, {
+      yaw: 0,
+      pitch: -0.045,
+      rotation: 0,
+      title: 'Detail',
+      text: 'On Progress',
+      // target: "hall-wisuda",
+      perspective: {
+        radius: 0
+      }
+    }, {
+      yaw: 2.2,
+      pitch: -0.045,
+      rotation: 0,
+      title: 'Booth 2',
       text: 'On Progress',
       // target: "hall-wisuda",
       perspective: {
