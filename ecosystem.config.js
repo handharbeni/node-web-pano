@@ -8,7 +8,7 @@ module.exports = {
         args: "Prasmul Pano",
         instances: "max",
         exec_mode: "cluster",
-        watch: false,
+        watch: true,
         max_memory_restart: "10G",
         env: {
           NODE_ENV: "development",

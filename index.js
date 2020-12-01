@@ -39,6 +39,10 @@ app.use('/videos', async (req, res) => {
   });
 });
 
+app.use('/wisudawan', function(req,res){
+  res.sendFile(path.join(__dirname+'/express/index-wisudawan.html'));
+});
+
 app.use('/', function(req, res){
   res.sendFile(path.join(__dirname+'/express/index.html'));
 });

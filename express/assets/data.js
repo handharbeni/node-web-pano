@@ -182,7 +182,7 @@ var data = {
           yaw: -2.2,
           pitch: -0.045,
           rotation: 0,
-          title: 'Booth 1',
+          title: 'Booth Game',
           text: 'On Progress',
           // target: "hall-wisuda",
           perspective: { radius: 0 }
@@ -200,7 +200,7 @@ var data = {
           yaw: 2.2,
           pitch: -0.045,
           rotation: 0,
-          title: 'Booth 2',
+          title: 'Booth ',
           text: 'On Progress',
           // target: "hall-wisuda",
           perspective: { radius: 0 }

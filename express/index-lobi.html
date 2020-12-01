@@ -9,60 +9,61 @@
 <link rel="stylesheet" href="assets/main.css">
 </head>
 <body class="multiple-scenes">
-
-<div id="pano"></div>
-
-
-<div id="myModal" class="modal">
-
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="content"></div>
+  <div id="pano">
+    <img id="image-360" src="assets/icon/360.png" style="width: 60px; height: auto; position: fixed;bottom: 7%;left: 50%;z-index: 1"/>
   </div>
 
-</div>
 
-<div id="sceneList">
-  <ul class="scenes">
-    <a href="javascript:void(0)" class="scene" data-id="lobby"></a>
-    <a href="javascript:void(0)" class="scene" data-id="hall-wisuda"></a>
-    <a href="javascript:void(0)" class="scene" data-id="hall-of-fame"></a>
-    <a href="javascript:void(0)" class="scene" data-id="booth"></a>
-  </ul>
-</div>
+  <div id="myModal" class="modal">
 
-<div id="titleBar">
-  <h1 class="sceneName"></h1>
-</div>
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="content"></div>
+    </div>
 
-<a href="javascript:void(0)" id="autorotateToggle"></a>
+  </div>
 
-<a href="javascript:void(0)" id="fullscreenToggle"></a>
+  <div id="sceneList">
+    <ul class="scenes">
+      <a href="javascript:void(0)" class="scene" data-id="lobby"></a>
+      <a href="javascript:void(0)" class="scene" data-id="hall-wisuda"></a>
+      <a href="javascript:void(0)" class="scene" data-id="hall-of-fame"></a>
+      <a href="javascript:void(0)" class="scene" data-id="booth"></a>
+    </ul>
+  </div>
 
-<a href="javascript:void(0)" id="sceneListToggle"></a>
+  <div id="titleBar">
+    <h1 class="sceneName"></h1>
+  </div>
 
-<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"></a>
-<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"></a>
-<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"></a>
-<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"></a>
-<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"></a>
-<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"></a>
+  <a href="javascript:void(0)" id="autorotateToggle"></a>
 
-<script src="http://1719132208.rsc.cdn77.org/assets/marzipano.js" ></script>
+  <a href="javascript:void(0)" id="fullscreenToggle"></a>
 
-<script src="http://1719132208.rsc.cdn77.org/assets/classList.js"></script>
-<script src="http://1719132208.rsc.cdn77.org/assets/screenfull.js" ></script>
-<script src="http://1719132208.rsc.cdn77.org/assets/bowser.js" ></script>
+  <a href="javascript:void(0)" id="sceneListToggle"></a>
 
-<script src="assets/data.js"></script>
-<script src="assets/multi.js"></script>
+  <a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1"></a>
+  <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2"></a>
+  <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3"></a>
+  <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4"></a>
+  <a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5"></a>
+  <a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6"></a>
 
-<script>
-  var modal = document.getElementById("myModal");
-  var span = document.getElementsByClassName("close")[0];
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-</script>
+  <script src="http://1719132208.rsc.cdn77.org/assets/marzipano.js" ></script>
+
+  <script src="http://1719132208.rsc.cdn77.org/assets/classList.js"></script>
+  <script src="http://1719132208.rsc.cdn77.org/assets/screenfull.js" ></script>
+  <script src="http://1719132208.rsc.cdn77.org/assets/bowser.js" ></script>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/multi.js"></script>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  </script>
 </body>
 </html>
