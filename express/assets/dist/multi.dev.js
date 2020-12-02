@@ -20,6 +20,7 @@
   var bowser = window.bowser;
   var screenfull = window.screenfull;
   var animatedModal = window.animatedModal;
+  var host = "http://wisuda2020-prasetiyamulya.com/";
   var data = window.data; // Grab elements from DOM.
 
   var panoElement = document.querySelector('#pano');
@@ -377,7 +378,7 @@
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
       var content = document.getElementById("content");
-      content.innerHTML = '<iframe style="position: absolute; width: 96%; height: 100%; border: none" src="https://www.youtube.com/embed/McrvrLUyHos?rel=0?version=3&autoplay=1&controls=0&&showinfo=0&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'; // generateEmbedHotspot(data, scene);
+      content.innerHTML = '<iframe style="position: absolute; width: 100%; height: 100%; border: none" src="' + host + 'live-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'; // generateEmbedHotspot(data, scene);
     }); // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
 

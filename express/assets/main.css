@@ -504,15 +504,19 @@ body.view-control-buttons .viewControlButton {
 
 /* The Close Button */
 .close {
+  position: absolute;
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  right: 3%;
+  top: 3%;
+  z-index: 1;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
