@@ -61,8 +61,10 @@
   <script>
     var modal = document.getElementById("myModal");
     var span = document.getElementsByClassName("close")[0];
+    var content = document.getElementById("content");
     span.onclick = function() {
       modal.style.display = "none";
+      content.innerHTML = '';
     }
   </script>
 </body>
