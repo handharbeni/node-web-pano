@@ -377,7 +377,7 @@
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
       var content = document.getElementById("content");
-      content.innerHTML = '<iframe style="position: absolute; width: 96%; height: 100%; border: none" src="https://www.youtube.com/embed/ckOeCDI2ElU?version=3&loop=1&playlist=ckOeCDI2ElU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'; // generateEmbedHotspot(data, scene);
+      content.innerHTML = '<iframe style="position: absolute; width: 96%; height: 100%; border: none" src="https://www.youtube.com/embed/McrvrLUyHos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'; // generateEmbedHotspot(data, scene);
     }); // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
 
