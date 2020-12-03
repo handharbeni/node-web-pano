@@ -21,6 +21,9 @@
   var screenfull = window.screenfull;
   var animatedModal = window.animatedModal;
   var host = "http://wisuda2020-prasetiyamulya.com/";
+  host = "http://localhost:3000/";
+  var baseUrl = "http://1719132208.rsc.cdn77.org/";
+  baseUrl = "http://localhost:3000/";
   var data = window.data; // Grab elements from DOM.
 
   var panoElement = document.querySelector('#pano');
@@ -70,8 +73,6 @@
   var viewer = new Marzipano.Viewer(panoElement, viewerOpts); // Create scenes.
 
   var scenes = data.scenes.map(function (data) {
-    var baseUrl = "http://1719132208.rsc.cdn77.org/"; // baseUrl = "http://localhost:3000/";
-
     var urlPrefix = baseUrl;
     var previewUrl = urlPrefix + "assets/image/" + data.id + "/" + data.lvl + "/" + data.preview;
     var source = Marzipano.ImageUrlSource.fromString(urlPrefix + "assets/image/" + data.id + "/" + data.lvl + "/{f}/image_{y}_{x}.jpeg", {
