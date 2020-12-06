@@ -94,23 +94,39 @@ video {
     z-index: 1;
     background-color: white;
 }
-
+.video-js{
+    position: absolute !important; 
+}
 </style>
+<link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+
+<!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 <body>
     <div class="video-container" id="video-container">
-        <video autoplay muted loop poster="http://1719132208.rsc.cdn77.org/assets/icon/poster.jpeg" id="bgembed">
+        <video 
+        class="video-js"
+        controls 
+        poster="http://1719132208.rsc.cdn77.org/assets/icon/poster.jpeg" 
+        id="bgembed"
+        data-setup="{}">
         </video>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         var video = document.getElementById('bgembed');
         var source = document.createElement('source');
+        var sourceAudio = document.createElement('source');
         axios
             .get("get-live")
             .then(response => {
-                source.setAttribute('src', response.data);
+                source.setAttribute('src', response.data.video);
+                source.setAttribute('type', 'video/mp4');
+                sourceAudio.setAttribute('src', response.data.audio)
+                sourceAudio.setAttribute('type', 'audio/mp4');
                 video.appendChild(source);
+                video.appendChild(sourceAudio);
                 video.play();
             })
             .catch();

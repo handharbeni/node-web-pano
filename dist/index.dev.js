@@ -12,25 +12,56 @@ var compression = require('compression');
 
 var Youtube = require('youtube-stream-url');
 
+var session = require('express-session');
+
+var cookieParser = require('cookie-parser');
+
+var router = express.Router();
+
+var bodyParser = require('body-parser');
+
 var redis = require("redis");
 
 var client = redis.createClient();
+
+var redisStore = require('connect-redis')(session);
+
 var videoUrl = 'https://www.youtube.com/watch?v=ckOeCDI2ElU';
-var videoEmbed = 'https://www.youtube.com/watch?v=McrvrLUyHos';
-app.use(express.json());
-app.use(express["static"]("express"));
-app.use(compression());
+var videoEmbed = 'https://www.youtube.com/watch?v=ckOeCDI2ElU';
 var maxTtl = 60 * 60 * 1;
-app.use('/lobby', function (req, res) {
+var ttlSession = maxTtl * 3; // app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+app.use(cookieParser()); // app.use(express.json());
+
+app.use(express["static"]("express"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(compression());
+app.use(session({
+  secret: 'ssshhhhh',
+  // create new redis store.
+  store: new redisStore({
+    host: 'localhost',
+    port: 6379,
+    client: client,
+    ttl: ttlSession
+  }),
+  saveUninitialized: false,
+  resave: false
+}));
+router.get('/lobby', function (req, res) {
   res.sendFile(path.join(__dirname + '/express/index-lobi.html'));
 });
-app.use('/videos-json', function _callee(req, res) {
+router.get('/videos-json', function _callee(req, res) {
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           Youtube.getInfo({
-            url: videoUrl
+            url: videoEmbed
           }).then(function (video) {
             return res.send(video);
           });
@@ -42,7 +73,7 @@ app.use('/videos-json', function _callee(req, res) {
     }
   });
 });
-app.use('/live-video', function _callee2(req, res) {
+router.get('/live-video', function _callee2(req, res) {
   return regeneratorRuntime.async(function _callee2$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -56,27 +87,26 @@ app.use('/live-video', function _callee2(req, res) {
     }
   });
 });
-app.use('/get-live', function _callee3(req, res) {
+router.get('/get-live', function _callee3(req, res) {
   return regeneratorRuntime.async(function _callee3$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
           Youtube.getInfo({
-            url: videoUrl
+            url: videoEmbed
           }).then(function (video) {
-            res.send(video.formats[2].url);
-          }); // client.get('urlEmbed', (err, data) => {
-          //   if (err) throw err;
-          //   if (data != null){
-          //     res.send(data);
-          //   } else {
-          //     Youtube.getInfo({url: videoEmbed})
-          //     .then(video => {
-          //       client.setex('urlEmbed', maxTtl, video.formats[2].url);
-          //       res.send(video.formats[2].url);
-          //     });
-          //   }
-          // });
+            var result = {};
+            video.formats.forEach(function (data) {
+              if (data.itag === 22) {
+                // video
+                result.video = data.url;
+              } else if (data.itag === 140) {
+                // audio
+                result.audio = data.url;
+              }
+            });
+            res.send(result);
+          });
 
         case 1:
         case "end":
@@ -85,7 +115,32 @@ app.use('/get-live', function _callee3(req, res) {
     }
   });
 });
-app.use('/videos', function _callee4(req, res) {
+router.post('/save-session', function (req, res) {
+  var sess = req.session;
+  var body = req.body;
+  sess.token = body.token;
+  sess.isLoggedIn = body.isLoggedIn;
+  console.log(sess);
+  sess.save();
+  res.send({
+    status: true
+  });
+});
+router.get('/get-session', function (req, res) {
+  var sess = req.session;
+
+  if (sess.isLoggedIn === 'true') {
+    res.send({
+      status: true,
+      token: sess.token
+    });
+  } else {
+    res.send({
+      status: false
+    });
+  }
+});
+router.get('/videos', function _callee4(req, res) {
   return regeneratorRuntime.async(function _callee4$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
@@ -112,12 +167,16 @@ app.use('/videos', function _callee4(req, res) {
     }
   });
 });
-app.use('/wisudawan', function (req, res) {
+router.get('/wisudawan', function (req, res) {
   res.sendFile(path.join(__dirname + '/express/index-wisudawan.html'));
 });
-app.use('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/express/index.html'));
+router.get('/landing', function (req, res) {
+  res.sendFile(path.join(__dirname + '/express/index.bak.html'));
 });
+router.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/express/index-countdown.html'));
+});
+app.use(router);
 var server = http.createServer(app);
 var port = 3000;
 server.listen(port);

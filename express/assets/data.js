@@ -29,21 +29,21 @@ var data = {
       linkHotspots: [
         {
             yaw: 0.73,
-            pitch: -0.052,
+            pitch: -0.002,
             rotation: 0,
             target: "hall-of-memory",
             perspective: { radius: 1200, extraTransforms: "rotateY(-45deg)" }
         },
         {
             yaw: -0.7,
-            pitch: -0.052,
+            pitch: -0.002,
             rotation: 0,
             target: "hall-of-fame",
             perspective: { radius: 1200, extraTransforms: "rotateY(-45deg)" }
         },
         {
             yaw: 0, 
-            pitch: -0.052,
+            pitch: -0.002,
             rotation: 0,
             target: 'hall-of-commencement',
             perspective: { radius: 800 }
@@ -73,11 +73,11 @@ var data = {
         ],
         preview: "preview.jpg",
         faceSize: 4096,
-        initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
+        initialViewParameters: { pitch: -0.27, yaw: 0, fov: Math.PI },
         linkHotspots: [
           {
-            yaw: -3.08, 
-            pitch: -0.15,
+            yaw: -3.119, 
+            pitch: -0.017,
             rotation: 0.05,
             target: "lobby",
             perspective: { radius: 1500 },
@@ -91,8 +91,8 @@ var data = {
             pitch: 0,
             perspective: { radius: 1640 },
             sourceLocation: {
-              yaw: 0.8, 
-              pitch: -0.2,
+              yaw: 1.4, 
+              pitch: 1,
               perspective: { radius: 940, extraTransforms: "rotate(1deg)" },
             },
             source: [
@@ -113,9 +113,9 @@ var data = {
         ],
         initialEmbed: [
           {
-            yaw: -0.04, 
-            pitch: -0.2,
-            perspective: { radius: 2600 },
+            yaw: -0.035, 
+            pitch: -0.27,
+            perspective: { radius: 2200, extraTransforms: "rotate(-1deg)" },
             target: "#"
           }
         ]
@@ -214,24 +214,24 @@ var data = {
       ],
       preview: "preview.jpg",
       faceSize: 4096,
-      initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
+      initialViewParameters: { pitch: -0.27, yaw: 0, fov: Math.PI },
       linkHotspots: [
         {
-          yaw: 2.2,
+          yaw: 2.6,
           pitch: -0.045,
           rotation: 0,
           target: "hall-of-memory-right",
           perspective: { radius: 1600 },
         },
         {
-          yaw: 0,
+          yaw: -3.19,
           pitch: -0.045,
           rotation: 0,
           target: "hall-of-memory",
           perspective: { radius: 1600 },
         },
         {
-          yaw: -2.2,
+          yaw: -2.6,
           pitch: -0.045,
           rotation: 0,
           target: "hall-of-memory-left",
@@ -257,24 +257,24 @@ var data = {
       initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
       linkHotspots: [
         {
-          yaw: 2.2,
+          yaw: -1.2,
           pitch: -0.045,
           rotation: 0,
           target: "hall-of-memory-right",
           perspective: { radius: 1600 },
         },
         {
-          yaw: 0,
-          pitch: -0.045,
-          rotation: 0,
-          target: "hall-of-memory-front",
-          perspective: { radius: 1600 },
-        },
-        {
-          yaw: -3,
+          yaw: -0.7,
           pitch: -0.045,
           rotation: 0,
           target: "hall-of-memory",
+          perspective: { radius: 1600 },
+        },
+        {
+          yaw: -2.7,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory-front",
           perspective: { radius: 1600 },
         }      
       ],
@@ -304,17 +304,17 @@ var data = {
           perspective: { radius: 1600 },
         },
         {
-          yaw: 0,
+          yaw: 1.2,
           pitch: -0.045,
           rotation: 0,
-          target: "hall-of-memory-front",
+          target: "hall-of-memory",
           perspective: { radius: 1600 },
         },
         {
           yaw: -3,
           pitch: -0.045,
           rotation: 0,
-          target: "hall-of-memory",
+          target: "hall-of-memory-front",
           perspective: { radius: 1600 },
         }             
       ],
