@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const compression = require('compression');
 const Youtube = require('youtube-stream-url');
+const session = require('express-session')
 
 const redis = require("redis");
 const client = redis.createClient();
@@ -13,7 +14,12 @@ const videoEmbed = 'https://www.youtube.com/watch?v=McrvrLUyHos';
 app.use(express.json());
 app.use(express.static("express"));
 app.use(compression());
-
+app.use(session({
+  secret: 'mhandharbeniSecreteWEbPano',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 const maxTtl = 60 * 60 * 1;
 
 app.use('/lobby', function(req,res){

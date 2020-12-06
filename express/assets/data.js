@@ -31,7 +31,7 @@ var data = {
             yaw: 0.73,
             pitch: -0.052,
             rotation: 0,
-            target: "booth",
+            target: "hall-of-memory",
             perspective: { radius: 1200, extraTransforms: "rotateY(-45deg)" }
         },
         {
@@ -45,7 +45,7 @@ var data = {
             yaw: 0, 
             pitch: -0.052,
             rotation: 0,
-            target: 'hall-wisuda',
+            target: 'hall-of-commencement',
             perspective: { radius: 800 }
         }
       ],
@@ -64,8 +64,8 @@ var data = {
       initialEmbed: []
     },
     {
-        id: "hall-wisuda",
-        name: "Hall Wisuda",
+        id: "hall-of-commencement",
+        name: "Hall of Commencement",
         lvl: 1,
         levels: [
           { tileSize: 256, size: 256, fallbackOnly: true },
@@ -158,8 +158,8 @@ var data = {
       initialEmbed: []
     },
     {
-      id: "booth",
-      name: "Booth",
+      id: "hall-of-memory",
+      name: "Hall of Memory",
       lvl: 1,
       levels: [
         { tileSize: 256, size: 256, fallbackOnly: true },
@@ -176,41 +176,154 @@ var data = {
               target: "lobby",
               perspective: { radius: 1600 },
           },
+          {
+            yaw: 2.2,
+            pitch: -0.045,
+            rotation: 0,
+            target: "hall-of-memory-right",
+            perspective: { radius: 1600 },
+          },
+          {
+            yaw: 0,
+            pitch: -0.045,
+            rotation: 0,
+            target: "hall-of-memory-front",
+            perspective: { radius: 1600 },
+          },
+          {
+            yaw: -2.2,
+            pitch: -0.045,
+            rotation: 0,
+            target: "hall-of-memory-left",
+            perspective: { radius: 1600 },
+          }
       ],
-      infoHotspots: [      
+      infoHotspots: [],
+      externalLinkHostspot: [],
+      embedHotspot: [],
+      menuEmbedHotspot: [],
+      initialEmbed: []
+    },
+    {
+      id: "hall-of-memory-front",
+      name: "Hall of Memory Front",
+      lvl: 1,
+      levels: [
+        { tileSize: 256, size: 256, fallbackOnly: true },
+        { tileSize: 512, size: 3072 }
+      ],
+      preview: "preview.jpg",
+      faceSize: 4096,
+      initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
+      linkHotspots: [
         {
-          yaw: -2.2,
+          yaw: 2.2,
           pitch: -0.045,
           rotation: 0,
-          title: 'Booth Game',
-          text: 'On Progress',
-          // target: "hall-wisuda",
-          perspective: { radius: 0 }
+          target: "hall-of-memory-right",
+          perspective: { radius: 1600 },
         },
         {
           yaw: 0,
           pitch: -0.045,
           rotation: 0,
-          title: 'Detail',
-          text: 'On Progress',
-          // target: "hall-wisuda",
-          perspective: { radius: 0 }
+          target: "hall-of-memory",
+          perspective: { radius: 1600 },
         },
         {
-          yaw: 2.2,
+          yaw: -2.2,
           pitch: -0.045,
           rotation: 0,
-          title: 'Booth ',
-          text: 'On Progress',
-          // target: "hall-wisuda",
-          perspective: { radius: 0 }
-        }
+          target: "hall-of-memory-left",
+          perspective: { radius: 1600 },
+        }        
       ],
+      infoHotspots: [],
       externalLinkHostspot: [],
       embedHotspot: [],
       menuEmbedHotspot: [],
       initialEmbed: []
-    } 
+    },
+    {
+      id: "hall-of-memory-left",
+      name: "Hall of Memory Left",
+      lvl: 1,
+      levels: [
+        { tileSize: 256, size: 256, fallbackOnly: true },
+        { tileSize: 512, size: 3072 }
+      ],
+      preview: "preview.jpg",
+      faceSize: 4096,
+      initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
+      linkHotspots: [
+        {
+          yaw: 2.2,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory-right",
+          perspective: { radius: 1600 },
+        },
+        {
+          yaw: 0,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory-front",
+          perspective: { radius: 1600 },
+        },
+        {
+          yaw: -3,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory",
+          perspective: { radius: 1600 },
+        }      
+      ],
+      infoHotspots: [],
+      externalLinkHostspot: [],
+      embedHotspot: [],
+      menuEmbedHotspot: [],
+      initialEmbed: []
+    },
+    {
+      id: "hall-of-memory-right",
+      name: "Hall of Memory Right",
+      lvl: 1,
+      levels: [
+        { tileSize: 256, size: 256, fallbackOnly: true },
+        { tileSize: 512, size: 3072 }
+      ],
+      preview: "preview.jpg",
+      faceSize: 4096,
+      initialViewParameters: { pitch: 0, yaw: 0, fov: Math.PI },
+      linkHotspots: [
+        {
+          yaw: 2.2,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory-left",
+          perspective: { radius: 1600 },
+        },
+        {
+          yaw: 0,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory-front",
+          perspective: { radius: 1600 },
+        },
+        {
+          yaw: -3,
+          pitch: -0.045,
+          rotation: 0,
+          target: "hall-of-memory",
+          perspective: { radius: 1600 },
+        }             
+      ],
+      infoHotspots: [],
+      externalLinkHostspot: [],
+      embedHotspot: [],
+      menuEmbedHotspot: [],
+      initialEmbed: []
+    }     
   ],
   name: "Virtual Tour PRASMUL",
   settings: {

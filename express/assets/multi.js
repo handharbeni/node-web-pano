@@ -22,10 +22,10 @@
   var animatedModal = window.animatedModal
 
   var host = "http://wisuda2020-prasetiyamulya.com/";
-  // host = "http://localhost:3000/";
+  host = "http://localhost:3000/";
 
   var baseUrl = "http://1719132208.rsc.cdn77.org/";
-  // baseUrl = "http://localhost:3000/";
+  baseUrl = "http://localhost:3000/";
 
   
   var data = window.data;
@@ -210,6 +210,7 @@
   // Set handler for scene switch.
   scenes.forEach(function(scene) {
     var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
+    console.log(el);
     el.addEventListener('click', function() {
       switchScene(scene);
       // On mobile, hide scene list after selecting a scene.
