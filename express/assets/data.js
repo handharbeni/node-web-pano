@@ -92,7 +92,7 @@ var data = {
             icon: 'https://4k1spmsj.tinifycdn.com/assets/icon/bumper.gif',
             // https://4t3mkldl.tinifycdn.com/assets/icon/info.png  
             // src: 'http://wisuda2020-prasetiyamulya.com/live-video',
-            src: 'https://www.youtube.com/embed/Pi7zMzX-m7Y?autoplay=0&rel=0&showinfo=0&modestbranding=1&enablejsapi=1&controls=1&playsinline=1&origin=http://www.wisuda2020-prasetiyamulya.com&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&showinfo=0',
+            src: 'https://www.youtube.com/embed/uXiMD7GMcNw?autoplay=0&rel=0&showinfo=0&modestbranding=1&enablejsapi=1&controls=1&playsinline=1&origin=http://www.wisuda2020-prasetiyamulya.com&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&showinfo=0',
             type: "youtube",
             yaw: -0.035, 
             pitch: -0.27,
