@@ -41,7 +41,7 @@ router.get('/lobby', function(req,res){
   }
 });
 router.get('/videos-json', async function(req, res){
-  Youtube.getInfo({url: videoEmbed})
+  Youtube.getInfo({url: videoUrl})
   .then(video => res.send(video));
 });
 router.get('/live-video', async function(req, res){
