@@ -10,7 +10,7 @@ $(document).ready(function($) {
         var year = parseInt( $(".count-down").attr("data-countdown-year"), 10 );
         var month = parseInt( $(".count-down").attr("data-countdown-month"), 10 ) - 1;
         var day = parseInt( $(".count-down").attr("data-countdown-day"), 10 );
-        $(".count-down").countdown({until: new Date(year, month, day, '07','25','00'), padZeroes: true});
+        $(".count-down").countdown({until: new Date(year, month, day, '06','00','00'), padZeroes: true});
     }
 
     if ($(".video").length > 0) {

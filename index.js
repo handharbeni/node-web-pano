@@ -38,7 +38,7 @@ router.get('/lobby', function(req,res){
   if(sess.isLoggedIn == true){
     res.sendFile(path.join(__dirname+'/express/index-lobi.html'));
   } else {
-    res.redirect('/landing');
+    res.redirect('/');
   }
 });
 router.get('/videos-json', async function(req, res){
@@ -50,7 +50,7 @@ router.get('/live-video', async function(req, res){
   // let sess = req.session;
   // if(sess.isLoggedIn == true){
   // } else {
-  //   res.redirect('/landing');
+  //   res.redirect('/');
   // }
 });
 router.get('/get-live', async (req, res) => {
@@ -111,18 +111,18 @@ router.get('/wisudawan', function(req,res){
   res.sendFile(path.join(__dirname+'/express/index-wisudawan.html'));
 })
 router.get('/landing', function(req, res){
-  res.sendFile(path.join(__dirname+'/express/index.bak.html'));
+  res.sendFile(path.join(__dirname+'/express/index.html'));
 })
 router.get('/game', function(req, res){
   res.sendFile(path.join(__dirname+'/express/index-game.html'));
   // let sess = req.session;
   // if(sess.isLoggedIn == true){
   // } else {
-  //   res.redirect('/landing');
+  //   res.redirect('/');
   // }
 })
 router.get('/', function(req, res){
-  res.sendFile(path.join(__dirname+'/express/index-countdown.html'));
+  res.sendFile(path.join(__dirname+'/express/index.html'));
 });
 app.use(router);
 
