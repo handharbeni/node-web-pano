@@ -53,17 +53,20 @@ router.get('/live-video', async function(req, res){
   // }
 });
 router.get('/get-live', async (req, res) => {
-  var result = {}    
-  video.formats.forEach(data => {
-    if(data.itag === 22){
-      // video
-      result.video = data.url;
-    } else if(data.itag === 140){
-      // audio
-      result.audio = data.url;
-    }
+  Youtube.getInfo({url: videoEmbed})
+  .then(video => {
+    var result = {}    
+    video.formats.forEach(data => {
+      if(data.itag === 22){
+        // video
+        result.video = data.url;
+      } else if(data.itag === 140){
+        // audio
+        result.audio = data.url;
+      }
+    });
+    res.send(result);
   });
-  res.send(result);
 })
 router.post('/save-session', (req, res) => {
   let sess = req.session;
