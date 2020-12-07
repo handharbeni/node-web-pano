@@ -127,11 +127,11 @@ var data = {
       initialEmbed: [
         {
           id: 'hofgallery',
-          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          icon: 'http://1719132208.rsc.cdn77.org/assets/icon/icon-loker.jpeg',
           src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/loker',
           yaw: 0, 
           pitch: 0.1,
-          perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
+          perspective: { radius: 1600},
           target: "#"
         }
       ]
@@ -324,11 +324,11 @@ var data = {
       initialEmbed: [
         {
           id: 'homgame',
-          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          icon: 'http://1719132208.rsc.cdn77.org/assets/icon/icon-game.jpeg',
           src: 'http://wisuda2020-prasetiyamulya.com/game',
-          yaw: 0, 
-          pitch: 0.1,
-          perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
+          yaw: -0.002, 
+          pitch: -0.002,
+          perspective: { radius: 1100},
           target: "#"
         }
       ]

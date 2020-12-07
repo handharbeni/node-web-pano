@@ -486,11 +486,12 @@ body.view-control-buttons .viewControlButton {
   display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
-  height: 100%; /* Full height */
-  width: 100%;
+  height: 98%; /* Full height */
+  width: 98%;
   overflow: hidden; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin: 10px;
 }
 
 /* Modal Content/Box */
