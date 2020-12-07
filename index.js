@@ -97,6 +97,9 @@ router.get('/wisudawan', function(req,res){
 router.get('/landing', function(req, res){
   res.sendFile(path.join(__dirname+'/express/index.bak.html'));
 })
+router.get('/game', function(req, res){
+  res.sendFile(path.join(__dirname+'/express/index-game.html'));
+})
 router.get('/', function(req, res){
   res.sendFile(path.join(__dirname+'/express/index-countdown.html'));
 });
