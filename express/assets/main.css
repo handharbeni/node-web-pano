@@ -500,7 +500,15 @@ body.view-control-buttons .viewControlButton {
   padding-right: 20px;
   border: 1px solid #888;
   width: 100%; /* Could be more or less, depending on screen size */
-  height: 100%;
+  height: auto;
+}
+
+#content-web{
+  background-color: #fefefe !important;
+}
+
+#content{
+  background-color: #fefefe !important;
 }
 
 /* The Close Button */
@@ -522,3 +530,18 @@ body.view-control-buttons .viewControlButton {
   cursor: pointer;
 }
 .ytp-chrome-top{display: none !important;}
+.frame-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */  
+  padding-top: 25px;
+  width: 300%; /* enlarge beyond browser width */
+  left: -100%; /* center */
+}
+
+.frame-container iframe {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+}

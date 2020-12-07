@@ -383,9 +383,18 @@
     wrapper.addEventListener('click', function() {
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
-
       var content = document.getElementById("content");
-      content.innerHTML = '<iframe class="vid" style="position: absolute; width: 100%; height: 100%; border: none" src="'+hotspot.src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()"></iframe>'
+      var contentweb = document.getElementById("content-web");
+
+      if (hotspot.type == 'youtube'){
+        contentweb.setAttribute('style', 'display: none;');
+        content.setAttribute('style', 'display: block;');
+        content.innerHTML = '<iframe class="vid" style="position: absolute; width: 100%; height: 100%; border: none" src="'+hotspot.src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()"></iframe>';
+      } else {
+        content.setAttribute('style', 'display: none;');
+        contentweb.setAttribute('style', 'display: block;');
+        contentweb.innerHTML = '<iframe class="vid" style="position: absolute; width: 100%; height: 100%; border: none" src="'+hotspot.src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()"></iframe>';
+      }
 
       // generateEmbedHotspot(data, scene);
     });

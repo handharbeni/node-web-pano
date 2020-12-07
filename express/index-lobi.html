@@ -16,10 +16,11 @@
 
   <div id="myModal" class="modal">
 
-  <div class="modal-content" onload="removeTop()" style=".ytp-chrome-top, .ytp-chrome-bottom{display: none;}">
+  <div class="modal-content" onload="removeTop()">
       <span class="close">&times;</span>
-      <div id="content"></div>
-    </div>
+      <div id="content" class="frame-container"></div>
+      <div id="content-web"></div>
+  </div>
 
   </div>
 
@@ -65,9 +66,11 @@
     var modal = document.getElementById("myModal");
     var span = document.getElementsByClassName("close")[0];
     var content = document.getElementById("content");
+    var contentweb = document.getElementById("content-web");
     span.onclick = function() {
       modal.style.display = "none";
       content.innerHTML = '';
+      contentweb.innerHTML = '';
     }
 
     function removeTop(){
