@@ -385,7 +385,7 @@
       modal.style.display = "block";
 
       var content = document.getElementById("content");
-      content.innerHTML = '<iframe style="position: absolute; width: 100%; height: 100%; border: none" src="'+hotspot.src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()" style=".ytp-chrome-top{display: none;!important}"></iframe>'
+      content.innerHTML = '<iframe style="position: absolute; width: 100%; height: 100%; border: none" src="'+hotspot.src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()"></iframe>'
 
       // generateEmbedHotspot(data, scene);
     });

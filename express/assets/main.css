@@ -521,3 +521,4 @@ body.view-control-buttons .viewControlButton {
   text-decoration: none;
   cursor: pointer;
 }
+.ytp-chrome-top{display: none !important;}
