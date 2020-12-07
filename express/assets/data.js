@@ -304,7 +304,7 @@ var data = {
         {
           id: 'homgame',
           icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
-          src: 'http://localhost:3000/game',
+          src: 'http://wisuda2020-prasetiyamulya.com/game',
           yaw: 0, 
           pitch: 0.1,
           perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
