@@ -522,3 +522,4 @@ body.view-control-buttons .viewControlButton {
   cursor: pointer;
 }
 .ytp-chrome-top{display: none !important;}
+.vid { pointer-events:none}
