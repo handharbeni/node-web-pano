@@ -16,7 +16,7 @@
 
   <div id="myModal" class="modal">
 
-    <div class="modal-content">
+  <div class="modal-content" onload="removeTop()" style=".ytp-chrome-top, .ytp-chrome-bottom{display: none;}">
       <span class="close">&times;</span>
       <div id="content"></div>
     </div>
@@ -68,6 +68,15 @@
     span.onclick = function() {
       modal.style.display = "none";
       content.innerHTML = '';
+    }
+
+    function removeTop(){
+      setTimeout(function() {
+        console.log("loaded");
+        var top = document.getElementsByClassName('ytp-chrome-top');
+        console.log(top);
+        while(top.length > 0) top[0].remove();
+      }, 10000);
     }
   </script>
 </body>
