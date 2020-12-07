@@ -45,12 +45,12 @@ router.get('/videos-json', async function(req, res){
   .then(video => res.send(video));
 });
 router.get('/live-video', async function(req, res){
-  let sess = req.session;
-  if(sess.isLoggedIn == true){
-    res.sendFile(path.join(__dirname+'/express/index-live.html'));
-  } else {
-    res.redirect('/landing');
-  }
+  res.sendFile(path.join(__dirname+'/express/index-live.html'));
+  // let sess = req.session;
+  // if(sess.isLoggedIn == true){
+  // } else {
+  //   res.redirect('/landing');
+  // }
 });
 router.get('/get-live', async (req, res) => {
   let sess = req.session;
@@ -113,12 +113,12 @@ router.get('/landing', function(req, res){
   res.sendFile(path.join(__dirname+'/express/index.bak.html'));
 })
 router.get('/game', function(req, res){
-  let sess = req.session;
-  if(sess.isLoggedIn == true){
-    res.sendFile(path.join(__dirname+'/express/index-game.html'));
-  } else {
-    res.redirect('/landing');
-  }
+  res.sendFile(path.join(__dirname+'/express/index-game.html'));
+  // let sess = req.session;
+  // if(sess.isLoggedIn == true){
+  // } else {
+  //   res.redirect('/landing');
+  // }
 })
 router.get('/', function(req, res){
   res.sendFile(path.join(__dirname+'/express/index-countdown.html'));
