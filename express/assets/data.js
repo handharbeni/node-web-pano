@@ -91,7 +91,8 @@ var data = {
             id: 'wisudaembed',
             icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif',
             // https://4t3mkldl.tinifycdn.com/assets/icon/info.png  
-            src: 'http://wisuda2020-prasetiyamulya.com/live-video',
+            // src: 'http://wisuda2020-prasetiyamulya.com/live-video',
+            src: 'https://www.youtube.com/embed/Pi7zMzX-m7Y?autoplay=0&rel=0&showinfo=0&modestbranding=1&enablejsapi=1&controls=1&playsinline=1&origin=http://www.wisuda2020-prasetiyamulya.com',
             yaw: -0.035, 
             pitch: -0.27,
             perspective: { radius: 2200, extraTransforms: "rotate(-1deg)" },
@@ -127,7 +128,7 @@ var data = {
         {
           id: 'hofgallery',
           icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
-          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/galery',
+          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/loker',
           yaw: 0, 
           pitch: 0.1,
           perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
@@ -220,7 +221,17 @@ var data = {
       externalLinkHostspot: [],
       embedHotspot: [],
       menuEmbedHotspot: [],
-      initialEmbed: []
+      initialEmbed: [
+        {
+          id: 'hofgallery',
+          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/galery',
+          yaw: 0, 
+          pitch: -0.7,
+          perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
+          target: "#"
+        }
+      ]
     },
     {
       id: "hall-of-memory-left",
@@ -260,7 +271,17 @@ var data = {
       externalLinkHostspot: [],
       embedHotspot: [],
       menuEmbedHotspot: [],
-      initialEmbed: []
+      initialEmbed: [
+        {
+          id: 'hofgallery',
+          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/about',
+          yaw: 0, 
+          pitch: 0.1,
+          perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
+          target: "#"
+        }
+      ]
     },
     {
       id: "hall-of-memory-right",

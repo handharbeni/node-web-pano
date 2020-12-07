@@ -13,7 +13,8 @@ const redis = require("redis");
 const client = redis.createClient();
 const redisStore = require('connect-redis')(session);
 const videoUrl = 'https://www.youtube.com/watch?v=vYsNAmc9mHE';
-const videoEmbed = 'https://www.youtube.com/watch?v=ckOeCDI2ElU';
+const videoEmbed = 'https://www.youtube.com/watch?v=keIt6LJEC44';
+// Pi7zMzX-m7Y
 const maxTtl = 60 * 60 * 1;
 const ttlSession = maxTtl * 3;
 // app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,7 +42,7 @@ router.get('/lobby', function(req,res){
   }
 });
 router.get('/videos-json', async function(req, res){
-  Youtube.getInfo({url: videoUrl})
+  Youtube.getInfo({url: videoEmbed})
   .then(video => res.send(video));
 });
 router.get('/live-video', async function(req, res){
@@ -56,15 +57,20 @@ router.get('/get-live', async (req, res) => {
   Youtube.getInfo({url: videoEmbed})
   .then(video => {
     var result = {}    
-    video.formats.forEach(data => {
-      if(data.itag === 22){
-        // video
-        result.video = data.url;
-      } else if(data.itag === 140){
-        // audio
-        result.audio = data.url;
-      }
-    });
+    var len = video.formats.length;
+    console.log(len);
+    result.video = video.formats[0].url;
+    result.audio = video.formats[len-1].url;
+    console.log(result);
+    // video.formats.forEach(data => {
+    //   if(data.itag === 133){
+    //     // video
+    //     result.video = data.url;
+    //   } else if(data.itag === 140){
+    //     // audio
+    //     result.audio = data.url;
+    //   }
+    // });
     res.send(result);
   });
 })

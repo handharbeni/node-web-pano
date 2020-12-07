@@ -127,6 +127,7 @@ video {
                 sourceAudio.setAttribute('type', 'audio/mp4');
                 video.appendChild(source);
                 video.appendChild(sourceAudio);
+                video.load();
                 video.play();
             })
             .catch();

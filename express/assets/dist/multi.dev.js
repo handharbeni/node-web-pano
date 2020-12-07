@@ -21,9 +21,9 @@
   var screenfull = window.screenfull;
   var animatedModal = window.animatedModal;
   var host = "http://wisuda2020-prasetiyamulya.com/";
-  host = "http://localhost:3000/";
+  // host = "http://localhost:3000/";
   var baseUrl = "http://1719132208.rsc.cdn77.org/";
-  baseUrl = "http://localhost:3000/";
+  // baseUrl = "http://localhost:3000/";
   var data = window.data; // Grab elements from DOM.
 
   var panoElement = document.querySelector('#pano');
