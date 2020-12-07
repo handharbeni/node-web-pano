@@ -100,18 +100,12 @@
     });
 
 
-    // data.embedHotspot.forEach(function(hotspot){
-    //   var element = createEmbededHotspot(hotspot);
-    //   var menuElement = createMenuEmbededHotspot(hotspot);
-    //   scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
-    //   scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
-
-    //   // var switchElements = document.querySelectorAll('[data-source]');
-    //   // for (var i = 0; i < switchElements.length; i++) {
-    //   //   var element = switchElements[i];
-    //   //   addClickEvent(hotspot, element);
-    //   // }
-    // })
+    data.embedHotspot.forEach(function(hotspot){
+      var element = createEmbededHotspot(hotspot);
+      scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
+      console.log(hotspot.yaw, hotspot.pitch, hotspot.source[0].content);
+      switchHotspotId(hotspot, hotspot.source[0].content);
+    })
 
     // Create link hotspots.
     data.linkHotspots.forEach(function(hotspot) {
@@ -147,6 +141,11 @@
     var newNode = document.createElement('div');
     newNode.innerHTML = source;
     document.getElementsByClassName('iframespot')[0].replaceChild( newNode, document.getElementsByClassName('iframespot')[0].firstChild)
+  }
+  function switchHotspotId(hotspot, source) {
+    var newNode = document.createElement('div');
+    newNode.innerHTML = source;
+    document.getElementById(hotspot.idhotspot).childNodes[0].replaceChild( newNode, document.getElementById(hotspot.idhotspot).childNodes[0].firstChild)
   }
   function addClickEvent(source, element) {
     element.addEventListener('click', function() {
@@ -369,7 +368,8 @@
 
     // Create image element.
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif';
+    icon.src = hotspot.icon;
+    //https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
@@ -385,7 +385,7 @@
       modal.style.display = "block";
 
       var content = document.getElementById("content");
-      content.innerHTML = '<iframe style="position: absolute; width: 100%; height: 100%; border: none" src="'+host+'live-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'
+      content.innerHTML = '<iframe style="position: absolute; width: 100%; height: 100%; border: none" src="'+hotspot.src+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'
       // generateEmbedHotspot(data, scene);
     });
 
@@ -407,7 +407,7 @@
   }
 
   function createEmbededHotspot(hotspot){
-    var contentWrapper = document.createElement('div');
+    var contentWrapper = document.createElement('div');    
     contentWrapper.classList.add('message');
 
     var text = document.createTextNode("");
@@ -416,6 +416,7 @@
     
     var wrapper = document.createElement('div');
     wrapper.classList.add('iframespot');
+    wrapper.setAttribute('id', hotspot.idhotspot);
 
     wrapper.appendChild(contentWrapper);
     wrapper.style.display = "none";

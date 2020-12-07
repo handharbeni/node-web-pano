@@ -37,16 +37,16 @@ var data = {
     },
     linkHotspots: [{
       yaw: 0.73,
-      pitch: -0.052,
+      pitch: -0.002,
       rotation: 0,
-      target: "booth",
+      target: "hall-of-memory",
       perspective: {
         radius: 1200,
         extraTransforms: "rotateY(-45deg)"
       }
     }, {
       yaw: -0.7,
-      pitch: -0.052,
+      pitch: -0.002,
       rotation: 0,
       target: "hall-of-fame",
       perspective: {
@@ -55,9 +55,9 @@ var data = {
       }
     }, {
       yaw: 0,
-      pitch: -0.052,
+      pitch: -0.002,
       rotation: 0,
-      target: 'hall-wisuda',
+      target: 'hall-of-commencement',
       perspective: {
         radius: 800
       }
@@ -76,8 +76,8 @@ var data = {
     menuEmbedHotspot: [],
     initialEmbed: []
   }, {
-    id: "hall-wisuda",
-    name: "Hall Wisuda",
+    id: "hall-of-commencement",
+    name: "Hall of Commencement",
     lvl: 1,
     levels: [{
       tileSize: 256,
@@ -90,13 +90,13 @@ var data = {
     preview: "preview.jpg",
     faceSize: 4096,
     initialViewParameters: {
-      pitch: 0,
+      pitch: -0.27,
       yaw: 0,
       fov: Math.PI
     },
     linkHotspots: [{
-      yaw: -3.08,
-      pitch: -0.15,
+      yaw: -3.119,
+      pitch: -0.017,
       rotation: 0.05,
       target: "lobby",
       perspective: {
@@ -105,36 +105,13 @@ var data = {
     }],
     infoHotspots: [],
     externalLinkHostspot: [],
-    embedHotspot: [{
-      yaw: 0,
-      pitch: 0,
-      perspective: {
-        radius: 1640
-      },
-      sourceLocation: {
-        yaw: 0.8,
-        pitch: -0.2,
-        perspective: {
-          radius: 940,
-          extraTransforms: "rotate(1deg)"
-        }
-      },
-      source: [{
-        name: 'Zoom',
-        content: '<iframe width="100%" height="1700" src="https://www.youtube.com/embed/ckOeCDI2ElU?version=3&loop=1&playlist=ckOeCDI2ElU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'
-      }, {
-        name: 'Youtube',
-        content: '<iframe width="100%" height="1700" src="https://www.youtube.com/embed/vedBvGiXw2E?version=3&loop=1&playlist=vedBvGiXw2E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'
-      }, {
-        name: 'Close',
-        content: ''
-      }]
-    }],
+    embedHotspot: [],
     initialEmbed: [{
-      yaw: -0.04,
-      pitch: -0.2,
+      yaw: -0.035,
+      pitch: -0.27,
       perspective: {
-        radius: 2600
+        radius: 2200,
+        extraTransforms: "rotate(-1deg)"
       },
       target: "#"
     }]
@@ -182,8 +159,8 @@ var data = {
     menuEmbedHotspot: [],
     initialEmbed: []
   }, {
-    id: "booth",
-    name: "Booth",
+    id: "hall-of-memory",
+    name: "Hall of Memory",
     lvl: 1,
     levels: [{
       tileSize: 256,
@@ -208,40 +185,200 @@ var data = {
       perspective: {
         radius: 1600
       }
-    }],
-    infoHotspots: [{
-      yaw: -2.2,
+    }, {
+      yaw: 2.2,
       pitch: -0.045,
       rotation: 0,
-      title: 'Booth Game',
-      text: 'On Progress',
-      // target: "hall-wisuda",
+      target: "hall-of-memory-right",
       perspective: {
-        radius: 0
+        radius: 1600
       }
     }, {
       yaw: 0,
       pitch: -0.045,
       rotation: 0,
-      title: 'Detail',
-      text: 'On Progress',
-      // target: "hall-wisuda",
+      target: "hall-of-memory-front",
       perspective: {
-        radius: 0
+        radius: 1600
       }
     }, {
+      yaw: -2.2,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory-left",
+      perspective: {
+        radius: 1600
+      }
+    }],
+    infoHotspots: [],
+    externalLinkHostspot: [],
+    embedHotspot: [],
+    menuEmbedHotspot: [],
+    initialEmbed: []
+  }, {
+    id: "hall-of-memory-front",
+    name: "Hall of Memory Front",
+    lvl: 1,
+    levels: [{
+      tileSize: 256,
+      size: 256,
+      fallbackOnly: true
+    }, {
+      tileSize: 512,
+      size: 3072
+    }],
+    preview: "preview.jpg",
+    faceSize: 4096,
+    initialViewParameters: {
+      pitch: -0.27,
+      yaw: 0,
+      fov: Math.PI
+    },
+    linkHotspots: [{
+      yaw: 2.6,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory-right",
+      perspective: {
+        radius: 1600
+      }
+    }, {
+      yaw: -3.19,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory",
+      perspective: {
+        radius: 1600
+      }
+    }, {
+      yaw: -2.6,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory-left",
+      perspective: {
+        radius: 1600
+      }
+    }],
+    infoHotspots: [],
+    externalLinkHostspot: [],
+    embedHotspot: [],
+    menuEmbedHotspot: [],
+    initialEmbed: []
+  }, {
+    id: "hall-of-memory-left",
+    name: "Hall of Memory Left",
+    lvl: 1,
+    levels: [{
+      tileSize: 256,
+      size: 256,
+      fallbackOnly: true
+    }, {
+      tileSize: 512,
+      size: 3072
+    }],
+    preview: "preview.jpg",
+    faceSize: 4096,
+    initialViewParameters: {
+      pitch: 0,
+      yaw: 0,
+      fov: Math.PI
+    },
+    linkHotspots: [{
+      yaw: -1.2,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory-right",
+      perspective: {
+        radius: 1600
+      }
+    }, {
+      yaw: -0.7,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory",
+      perspective: {
+        radius: 1600
+      }
+    }, {
+      yaw: -2.7,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory-front",
+      perspective: {
+        radius: 1600
+      }
+    }],
+    infoHotspots: [],
+    externalLinkHostspot: [],
+    embedHotspot: [],
+    menuEmbedHotspot: [],
+    initialEmbed: []
+  }, {
+    id: "hall-of-memory-right",
+    name: "Hall of Memory Right",
+    lvl: 1,
+    levels: [{
+      tileSize: 256,
+      size: 256,
+      fallbackOnly: true
+    }, {
+      tileSize: 512,
+      size: 3072
+    }],
+    preview: "preview.jpg",
+    faceSize: 4096,
+    initialViewParameters: {
+      pitch: 0,
+      yaw: 0,
+      fov: Math.PI
+    },
+    linkHotspots: [{
       yaw: 2.2,
       pitch: -0.045,
       rotation: 0,
-      title: 'Booth ',
-      text: 'On Progress',
-      // target: "hall-wisuda",
+      target: "hall-of-memory-left",
       perspective: {
-        radius: 0
+        radius: 1600
+      }
+    }, {
+      yaw: 1.2,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory",
+      perspective: {
+        radius: 1600
+      }
+    }, {
+      yaw: -3,
+      pitch: -0.045,
+      rotation: 0,
+      target: "hall-of-memory-front",
+      perspective: {
+        radius: 1600
       }
     }],
+    infoHotspots: [],
     externalLinkHostspot: [],
-    embedHotspot: [],
+    embedHotspot: [{
+      yaw: -0.1,
+      pitch: 0,
+      perspective: {
+        radius: 3440,
+        extraTransforms: "rotate(1deg)"
+      },
+      sourceLocation: {
+        yaw: 1.4,
+        pitch: 1,
+        perspective: {
+          radius: 940,
+          extraTransforms: "rotate(1deg)"
+        }
+      },
+      source: [{
+        name: 'Game',
+        content: '<iframe width="100%" height="1700" src="http://wisuda2020-prasetiyamulya.com/game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'
+      }]
+    }],
     menuEmbedHotspot: [],
     initialEmbed: []
   }],

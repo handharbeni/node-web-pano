@@ -20,10 +20,10 @@
   var bowser = window.bowser;
   var screenfull = window.screenfull;
   var animatedModal = window.animatedModal;
-  var host = "http://wisuda2020-prasetiyamulya.com/"; // host = "http://localhost:3000/";
-
-  var baseUrl = "http://1719132208.rsc.cdn77.org/"; // baseUrl = "http://localhost:3000/";
-
+  var host = "http://wisuda2020-prasetiyamulya.com/";
+  host = "http://localhost:3000/";
+  var baseUrl = "http://1719132208.rsc.cdn77.org/";
+  baseUrl = "http://localhost:3000/";
   var data = window.data; // Grab elements from DOM.
 
   var panoElement = document.querySelector('#pano');
@@ -86,18 +86,23 @@
       geometry: geometry,
       view: view,
       pinFirstLevel: false
-    }); // data.embedHotspot.forEach(function(hotspot){
-    //   var element = createEmbededHotspot(hotspot);
-    //   var menuElement = createMenuEmbededHotspot(hotspot);
-    //   scene.hotspotContainer().createHotspot(element, { yaw: hotspot.yaw, pitch: hotspot.pitch }, { perspective: hotspot.perspective })
-    //   scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
-    //   // var switchElements = document.querySelectorAll('[data-source]');
-    //   // for (var i = 0; i < switchElements.length; i++) {
-    //   //   var element = switchElements[i];
-    //   //   addClickEvent(hotspot, element);
-    //   // }
-    // })
-    // Create link hotspots.
+    });
+    data.embedHotspot.forEach(function (hotspot) {
+      var element = createEmbededHotspot(hotspot); // var menuElement = createMenuEmbededHotspot(hotspot);
+
+      scene.hotspotContainer().createHotspot(element, {
+        yaw: hotspot.yaw,
+        pitch: hotspot.pitch
+      }, {
+        perspective: hotspot.perspective
+      }); // scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
+
+      switchHotspot(hotspot.source.source[0]); // var switchElements = document.querySelectorAll('[data-source]');
+      // for (var i = 0; i < switchElements.length; i++) {
+      //   var element = switchElements[i];
+      //   addClickEvent(hotspot, element);
+      // }
+    }); // Create link hotspots.
 
     data.linkHotspots.forEach(function (hotspot) {
       var element = createLinkHotspotElement(hotspot);

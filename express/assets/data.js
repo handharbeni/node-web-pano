@@ -85,34 +85,13 @@ var data = {
         ],
         infoHotspots: [],
         externalLinkHostspot: [],
-        embedHotspot: [
-          {
-            yaw: 0, 
-            pitch: 0,
-            perspective: { radius: 1640 },
-            sourceLocation: {
-              yaw: 1.4, 
-              pitch: 1,
-              perspective: { radius: 940, extraTransforms: "rotate(1deg)" },
-            },
-            source: [
-              {
-                name: 'Zoom',
-                content: '<iframe width="100%" height="1700" src="https://www.youtube.com/embed/ckOeCDI2ElU?version=3&loop=1&playlist=ckOeCDI2ElU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
-              },
-              {
-                name: 'Youtube',
-                content: '<iframe width="100%" height="1700" src="https://www.youtube.com/embed/vedBvGiXw2E?version=3&loop=1&playlist=vedBvGiXw2E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>',
-              },
-              {
-                name: 'Close',
-                content: ''
-              }
-            ]
-          }
-        ],
+        embedHotspot: [],
         initialEmbed: [
           {
+            id: 'wisudaembed',
+            icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif',
+            // https://4t3mkldl.tinifycdn.com/assets/icon/info.png  
+            src: 'http://wisuda2020-prasetiyamulya.com/live-video',
             yaw: -0.035, 
             pitch: -0.27,
             perspective: { radius: 2200, extraTransforms: "rotate(-1deg)" },
@@ -140,22 +119,21 @@ var data = {
               perspective: { radius: 0 },
           }
       ],
-      infoHotspots: [
-
-        {
-          yaw: 0,
-          pitch: 0,
-          rotation: 0,
-          title: 'Fame',
-          text: 'On Progress',
-          // target: "hall-wisuda",
-          perspective: { radius: 0 }
-        }    
-      ],
+      infoHotspots: [],
       externalLinkHostspot: [],
       embedHotspot: [],
       menuEmbedHotspot: [],
-      initialEmbed: []
+      initialEmbed: [
+        {
+          id: 'hofgallery',
+          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/galery',
+          yaw: 0, 
+          pitch: 0.1,
+          perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
+          target: "#"
+        }
+      ]
     },
     {
       id: "hall-of-memory",
@@ -322,7 +300,17 @@ var data = {
       externalLinkHostspot: [],
       embedHotspot: [],
       menuEmbedHotspot: [],
-      initialEmbed: []
+      initialEmbed: [
+        {
+          id: 'homgame',
+          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          src: 'http://localhost:3000/game',
+          yaw: 0, 
+          pitch: 0.1,
+          perspective: { radius: 600, extraTransforms: "rotate(-1deg)" },
+          target: "#"
+        }
+      ]
     }     
   ],
   name: "Virtual Tour PRASMUL",
