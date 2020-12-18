@@ -7,6 +7,7 @@ const Youtube = require('youtube-stream-url');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const router = express.Router();
+const serveIndex = require('serve-index');
 
 const bodyParser = require('body-parser');
 const redis = require("redis");
