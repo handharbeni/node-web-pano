@@ -86,7 +86,7 @@ router.post('/save-session', (req, res) => {
   res.send({status: true})
 })
 router.get('/get-session', (req, res) => {
-  res.send({status: true, token: sess.token});
+  res.send({status: true});
   // let sess = req.session;
   // if(sess.isLoggedIn == true){
   // } else {
