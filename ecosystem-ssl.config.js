@@ -1,11 +1,11 @@
 module.exports = {
     apps: [
       {
-        name: " Web Virtual Room PRASMUL",
+        name: " Web Virtual Room PRASMUL SSL",
         script: "index-ssl.js",
   
         // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
-        args: "Prasmul Pano",
+        args: "Prasmul Pano SSL",
         instances: "max",
         exec_mode: "cluster",
         watch: false,
