@@ -21,12 +21,11 @@
   var screenfull = window.screenfull;
   var animatedModal = window.animatedModal
 
-  var host = "http://wisuda2020-prasetiyamulya.com/";
+  var host = "https://wisuda2020-prasetiyamulya.com/";
   // host = "http://localhost:3000/";
 
-  var baseUrl = "http://1719132208.rsc.cdn77.org/";
+  var baseUrl = host;
   // baseUrl = "http://localhost:3000/";
-  baseUrl = host;
 
   
   var data = window.data;
