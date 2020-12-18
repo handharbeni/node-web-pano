@@ -20,10 +20,10 @@
   var bowser = window.bowser;
   var screenfull = window.screenfull;
   var animatedModal = window.animatedModal;
-  var host = "http://wisuda2020-prasetiyamulya.com/";
-  // host = "http://localhost:3000/";
-  var baseUrl = "https://www.wisuda2020-prasetiyamulya.com/";
-  // baseUrl = "http://localhost:3000/";
+  var host = "https://wisuda2020-prasetiyamulya.com/"; // host = "http://localhost:3000/";
+
+  var baseUrl = host; // baseUrl = "http://localhost:3000/";
+
   var data = window.data; // Grab elements from DOM.
 
   var panoElement = document.querySelector('#pano');
@@ -88,20 +88,15 @@
       pinFirstLevel: false
     });
     data.embedHotspot.forEach(function (hotspot) {
-      var element = createEmbededHotspot(hotspot); // var menuElement = createMenuEmbededHotspot(hotspot);
-
+      var element = createEmbededHotspot(hotspot);
       scene.hotspotContainer().createHotspot(element, {
         yaw: hotspot.yaw,
         pitch: hotspot.pitch
       }, {
         perspective: hotspot.perspective
-      }); // scene.hotspotContainer().createHotspot(menuElement, { yaw: hotspot.sourceLocation.yaw, pitch: hotspot.sourceLocation.pitch }, { perspective: hotspot.sourceLocation.perspective });
-
-      switchHotspot(hotspot.source.source[0]); // var switchElements = document.querySelectorAll('[data-source]');
-      // for (var i = 0; i < switchElements.length; i++) {
-      //   var element = switchElements[i];
-      //   addClickEvent(hotspot, element);
-      // }
+      });
+      console.log(hotspot.yaw, hotspot.pitch, hotspot.source[0].content);
+      switchHotspotId(hotspot, hotspot.source[0].content);
     }); // Create link hotspots.
 
     data.linkHotspots.forEach(function (hotspot) {
@@ -150,6 +145,12 @@
     var newNode = document.createElement('div');
     newNode.innerHTML = source;
     document.getElementsByClassName('iframespot')[0].replaceChild(newNode, document.getElementsByClassName('iframespot')[0].firstChild);
+  }
+
+  function switchHotspotId(hotspot, source) {
+    var newNode = document.createElement('div');
+    newNode.innerHTML = source;
+    document.getElementById(hotspot.idhotspot).childNodes[0].replaceChild(newNode, document.getElementById(hotspot.idhotspot).childNodes[0].firstChild);
   }
 
   function addClickEvent(source, element) {
@@ -306,7 +307,7 @@
     wrapper.classList.add('hotspot');
     wrapper.classList.add('link-hotspot');
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/link.png';
+    icon.src = 'https://wisuda2020-prasetiyamulya.com/assets/icon/link.png';
     icon.classList.add('link-hotspot-icon');
     var transformProperties = ['-ms-transform', '-webkit-transform', 'transform'];
 
@@ -334,7 +335,7 @@
     wrapper.classList.add('link-hotspot'); // Create image element.
 
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/link.png';
+    icon.src = 'https://wisuda2020-prasetiyamulya.com/assets/icon/link.png';
     icon.classList.add('link-hotspot-icon'); // Set rotation transform.
 
     var transformProperties = ['-ms-transform', '-webkit-transform', 'transform'];
@@ -369,7 +370,8 @@
     wrapper.href = hotspot.target; // Create image element.
 
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif';
+    icon.src = hotspot.icon; //http://wisuda2020-prasetiyamulya.com/assets/icon/bumper.gif';
+
     icon.classList.add('link-hotspot-icon'); // Set rotation transform.
 
     var transformProperties = ['-ms-transform', '-webkit-transform', 'transform'];
@@ -384,7 +386,18 @@
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
       var content = document.getElementById("content");
-      content.innerHTML = '<iframe style="position: absolute; width: 100%; height: 100%; border: none" src="' + host + 'live-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'; // generateEmbedHotspot(data, scene);
+      var contentweb = document.getElementById("content-web");
+
+      if (hotspot.type == 'youtube') {
+        contentweb.setAttribute('style', 'display: none;');
+        content.setAttribute('style', 'display: block;');
+        content.innerHTML = '<iframe class="vid" style="position: absolute; width: 100%; height: 100%; border: none" src="' + hotspot.src + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()"></iframe>';
+      } else {
+        content.setAttribute('style', 'display: none;');
+        contentweb.setAttribute('style', 'display: block;');
+        contentweb.innerHTML = '<iframe class="vid" style="position: absolute; width: 100%; height: 100%; border: none" src="' + hotspot.src + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen onload="removeTop()"></iframe>';
+      } // generateEmbedHotspot(data, scene);
+
     }); // Prevent touch and scroll events from reaching the parent element.
     // This prevents the view control logic from interfering with the hotspot.
 
@@ -406,6 +419,7 @@
     contentWrapper.appendChild(text);
     var wrapper = document.createElement('div');
     wrapper.classList.add('iframespot');
+    wrapper.setAttribute('id', hotspot.idhotspot);
     wrapper.appendChild(contentWrapper);
     wrapper.style.display = "none";
     return wrapper;
@@ -457,7 +471,7 @@
     var iconWrapper = document.createElement('div');
     iconWrapper.classList.add('info-hotspot-icon-wrapper');
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png';
+    icon.src = 'https://wisuda2020-prasetiyamulya.com/assets/icon/info.png';
     icon.classList.add('info-hotspot-icon');
     iconWrapper.appendChild(icon); // Create title element.
 
@@ -471,7 +485,7 @@
     var closeWrapper = document.createElement('div');
     closeWrapper.classList.add('info-hotspot-close-wrapper');
     var closeIcon = document.createElement('img');
-    closeIcon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/close.png';
+    closeIcon.src = 'https://wisuda2020-prasetiyamulya.com/assets/icon/close.png';
     closeIcon.classList.add('info-hotspot-close-icon');
     closeWrapper.appendChild(closeIcon); // Construct header element.
 
