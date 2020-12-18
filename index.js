@@ -8,6 +8,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const router = express.Router();
 const serveIndex = require('serve-index');
+const cors = require('cors');
 
 const bodyParser = require('body-parser');
 const redis = require("redis");
@@ -21,6 +22,7 @@ const ttlSession = maxTtl * 3;
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(cors());
 // app.use(express.json());
 app.use(express.static("express"));
 app.use(bodyParser.json());      

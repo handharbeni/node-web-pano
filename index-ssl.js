@@ -9,6 +9,8 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const router = express.Router();
 const serveIndex = require('serve-index');
+const cors = require('cors');
+
 
 const bodyParser = require('body-parser');
 const redis = require("redis");
@@ -29,6 +31,7 @@ var https_options = {
 };
 app.use(cookieParser());
 // app.use(express.json());
+app.use(cors());
 app.use(express.static("express"));
 app.use(bodyParser.json());      
 app.use(bodyParser.urlencoded({extended: true}));

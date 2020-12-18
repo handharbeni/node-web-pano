@@ -1,12 +1,14 @@
 "use strict";
 
-var http = require('http');
+var https = require('https');
 
 var express = require('express');
 
 var path = require('path');
 
 var app = express();
+
+var fs = require('fs');
 
 var compression = require('compression');
 
@@ -37,9 +39,14 @@ var maxTtl = 60 * 60 * 1;
 var ttlSession = maxTtl * 3; // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 
-app.use(cookieParser());
-app.use(cors()); // app.use(express.json());
+var https_options = {
+  key: fs.readFileSync("cert/wisuda2020-prasetiyamulya.com.key"),
+  cert: fs.readFileSync("cert/wisuda2020-prasetiyamulya.com.crt"),
+  ca: fs.readFileSync("cert/wisuda2020-prasetiyamulya.com.ca")
+};
+app.use(cookieParser()); // app.use(express.json());
 
+app.use(cors());
 app.use(express["static"]("express"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -204,7 +211,7 @@ router.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/express/index.html'));
 });
 app.use(router);
-var server = http.createServer(app);
-var port = 80;
+var server = https.createServer(https_options, app);
+var port = 443;
 server.listen(port);
 console.debug('Server listening on port ' + port);
