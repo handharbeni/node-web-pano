@@ -2,6 +2,7 @@ const https = require('https');
 const express = require('express');
 const path = require('path');
 const app = express();
+const fs = require('fs');
 const compression = require('compression');
 const Youtube = require('youtube-stream-url');
 const session = require('express-session');
