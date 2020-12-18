@@ -255,15 +255,15 @@ axios
     .catch();
 $("#modal").iziModal();
 $(document).on('click', '.trigger', function (event) {
-    console.log('clicked');
     event.preventDefault();
     axios.get("get-session")
             .then(response => {
-                if(response.data.status == true){
-                    window.location.replace("lobby");
-                } else {
-                    $('#modal').iziModal('open');
-                }
+                window.location.replace("lobby");
+                // if(response.data.status == true){
+                //     window.location.replace("lobby");
+                // } else {
+                //     $('#modal').iziModal('open');
+                // }
             })
             .catch();
 });

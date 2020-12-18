@@ -26,6 +26,7 @@
 
   var baseUrl = "http://1719132208.rsc.cdn77.org/";
   // baseUrl = "http://localhost:3000/";
+  baseUrl = host;
 
   
   var data = window.data;
@@ -293,7 +294,7 @@
     wrapper.classList.add('link-hotspot');
 
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/link.png';
+    icon.src = 'http://wisuda2020-prasetiyamulya.com/assets/icon/link.png';
     icon.classList.add('link-hotspot-icon');
 
     var transformProperties = [ '-ms-transform', '-webkit-transform', 'transform' ];
@@ -327,7 +328,7 @@
 
     // Create image element.
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/link.png';
+    icon.src = 'http://wisuda2020-prasetiyamulya.com/assets/icon/link.png';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
@@ -369,7 +370,7 @@
     // Create image element.
     var icon = document.createElement('img');
     icon.src = hotspot.icon;
-    //https://4t3mkldl.tinifycdn.com/assets/icon/bumper.gif';
+    //http://wisuda2020-prasetiyamulya.com/assets/icon/bumper.gif';
     icon.classList.add('link-hotspot-icon');
 
     // Set rotation transform.
@@ -487,7 +488,7 @@
     var iconWrapper = document.createElement('div');
     iconWrapper.classList.add('info-hotspot-icon-wrapper');
     var icon = document.createElement('img');
-    icon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png';
+    icon.src = 'http://wisuda2020-prasetiyamulya.com/assets/icon/info.png';
     icon.classList.add('info-hotspot-icon');
     iconWrapper.appendChild(icon);
 
@@ -503,7 +504,7 @@
     var closeWrapper = document.createElement('div');
     closeWrapper.classList.add('info-hotspot-close-wrapper');
     var closeIcon = document.createElement('img');
-    closeIcon.src = 'https://4t3mkldl.tinifycdn.com/assets/icon/close.png';
+    closeIcon.src = 'http://wisuda2020-prasetiyamulya.com/assets/icon/close.png';
     closeIcon.classList.add('info-hotspot-close-icon');
     closeWrapper.appendChild(closeIcon);
 

@@ -34,12 +34,12 @@ app.use(session({
 }))
 
 router.get('/lobby', function(req,res){
-  let sess = req.session;
-  if(sess.isLoggedIn == true){
-    res.sendFile(path.join(__dirname+'/express/index-lobi.html'));
-  } else {
-    res.redirect('/');
-  }
+  res.sendFile(path.join(__dirname+'/express/index-lobi.html'));
+  // let sess = req.session;
+  // if(sess.isLoggedIn == true){
+  // } else {
+  //   res.redirect('/');
+  // }
 });
 router.get('/videos-json', async function(req, res){
   Youtube.getInfo({url: videoEmbed})
@@ -86,12 +86,12 @@ router.post('/save-session', (req, res) => {
   res.send({status: true})
 })
 router.get('/get-session', (req, res) => {
-  let sess = req.session;
-  if(sess.isLoggedIn == true){
-    res.send({status: true, token: sess.token});
-  } else {
-    res.send({status: false});
-  }
+  res.send({status: true, token: sess.token});
+  // let sess = req.session;
+  // if(sess.isLoggedIn == true){
+  // } else {
+  //   res.send({status: false});
+  // }
 })
 router.get('/videos', async (req, res) => {  
   client.get('urlVideos', (err, data) => {

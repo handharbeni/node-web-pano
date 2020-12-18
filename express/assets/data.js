@@ -89,7 +89,7 @@ var data = {
         initialEmbed: [
           {
             id: 'wisudaembed',
-            icon: 'https://4k1spmsj.tinifycdn.com/assets/icon/bumper.gif',
+            icon: 'http://wisuda2020-prasetiyamulya.com/assets/icon/bumper.gif',
             // https://4t3mkldl.tinifycdn.com/assets/icon/info.png  
             // src: 'http://wisuda2020-prasetiyamulya.com/live-video',
             src: 'https://www.youtube.com/embed/uXiMD7GMcNw?autoplay=0&rel=0&showinfo=0&modestbranding=1&enablejsapi=1&controls=1&playsinline=1&origin=http://www.wisuda2020-prasetiyamulya.com&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&showinfo=0',
@@ -128,7 +128,7 @@ var data = {
       initialEmbed: [
         {
           id: 'hofgallery',
-          icon: 'http://1719132208.rsc.cdn77.org/assets/icon/icon-loker.jpeg',
+          icon: 'http://wisuda2020-prasetiyamulya.com/assets/icon/icon-loker.jpeg',
           src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/loker',
           type: "web",
           yaw: 0, 
@@ -226,7 +226,7 @@ var data = {
       initialEmbed: [
         {
           id: 'hofgallery',
-          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          icon: 'http://wisuda2020-prasetiyamulya.com/assets/icon/info.png',
           src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/galery',
           type: "web",
           yaw: 0, 
@@ -277,7 +277,7 @@ var data = {
       initialEmbed: [
         {
           id: 'hofgallery',
-          icon: 'https://4t3mkldl.tinifycdn.com/assets/icon/info.png',
+          icon: 'http://wisuda2020-prasetiyamulya.com/assets/icon/info.png',
           src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/about',
           type: "web",
           yaw: 0, 
@@ -328,7 +328,7 @@ var data = {
       initialEmbed: [
         {
           id: 'homgame',
-          icon: 'http://1719132208.rsc.cdn77.org/assets/icon/icon-game.jpeg',
+          icon: 'http://wisuda2020-prasetiyamulya.com/assets/icon/icon-game.jpeg',
           src: 'http://wisuda2020-prasetiyamulya.com/game',
           type: "web",
           yaw: -0.002, 
