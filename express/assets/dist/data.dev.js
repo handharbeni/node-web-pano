@@ -107,11 +107,17 @@ var data = {
     externalLinkHostspot: [],
     embedHotspot: [],
     initialEmbed: [{
+      id: 'wisudaembed',
+      icon: 'http://wisuda2020-prasetiyamulya.com/assets/icon/bumper.gif',
+      // https://4t3mkldl.tinifycdn.com/assets/icon/info.png  
+      // src: 'http://wisuda2020-prasetiyamulya.com/live-video',
+      src: 'https://www.youtube.com/embed/2qnWslJHUV8?autoplay=0&rel=0&showinfo=0&modestbranding=1&enablejsapi=1&controls=1&playsinline=1&origin=http://www.wisuda2020-prasetiyamulya.com&controls=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&showinfo=0',
+      type: "youtube",
       yaw: -0.035,
       pitch: -0.27,
       perspective: {
         radius: 2200,
-        extraTransforms: "rotate(-1deg)"
+        extraTransforms: "rotate(-0.5deg)"
       },
       target: "#"
     }]
@@ -143,21 +149,22 @@ var data = {
         radius: 0
       }
     }],
-    infoHotspots: [{
-      yaw: 0,
-      pitch: 0,
-      rotation: 0,
-      title: 'Fame',
-      text: 'On Progress',
-      // target: "hall-wisuda",
-      perspective: {
-        radius: 0
-      }
-    }],
+    infoHotspots: [],
     externalLinkHostspot: [],
     embedHotspot: [],
     menuEmbedHotspot: [],
-    initialEmbed: []
+    initialEmbed: [{
+      id: 'hofgallery',
+      icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/icon-loker.jpeg',
+      src: 'https://www.wisuda2020-prasetiyamulya.com/proxy/Welcome/loker',
+      type: "web",
+      yaw: 0,
+      pitch: 0.1,
+      perspective: {
+        radius: 1600
+      },
+      target: "#"
+    }]
   }, {
     id: "hall-of-memory",
     name: "Hall of Memory",
@@ -263,7 +270,19 @@ var data = {
     externalLinkHostspot: [],
     embedHotspot: [],
     menuEmbedHotspot: [],
-    initialEmbed: []
+    initialEmbed: [{
+      id: 'hofgallery',
+      icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/info.png',
+      src: 'https://www.wisuda2020-prasetiyamulya.com/proxy/Welcome/galery',
+      type: "web",
+      yaw: 0,
+      pitch: -0.7,
+      perspective: {
+        radius: 600,
+        extraTransforms: "rotate(-1deg)"
+      },
+      target: "#"
+    }]
   }, {
     id: "hall-of-memory-left",
     name: "Hall of Memory Left",
@@ -312,7 +331,19 @@ var data = {
     externalLinkHostspot: [],
     embedHotspot: [],
     menuEmbedHotspot: [],
-    initialEmbed: []
+    initialEmbed: [{
+      id: 'hofgallery',
+      icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/info.png',
+      src: 'https://www.wisuda2020-prasetiyamulya.com/proxy/Welcome/about',
+      type: "web",
+      yaw: 0,
+      pitch: 0.1,
+      perspective: {
+        radius: 600,
+        extraTransforms: "rotate(-1deg)"
+      },
+      target: "#"
+    }]
   }, {
     id: "hall-of-memory-right",
     name: "Hall of Memory Right",
@@ -359,28 +390,20 @@ var data = {
     }],
     infoHotspots: [],
     externalLinkHostspot: [],
-    embedHotspot: [{
-      yaw: -0.1,
-      pitch: 0,
-      perspective: {
-        radius: 3440,
-        extraTransforms: "rotate(1deg)"
-      },
-      sourceLocation: {
-        yaw: 1.4,
-        pitch: 1,
-        perspective: {
-          radius: 940,
-          extraTransforms: "rotate(1deg)"
-        }
-      },
-      source: [{
-        name: 'Game',
-        content: '<iframe width="100%" height="1700" src="http://wisuda2020-prasetiyamulya.com/game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; loop" allowfullscreen></iframe>'
-      }]
-    }],
+    embedHotspot: [],
     menuEmbedHotspot: [],
-    initialEmbed: []
+    initialEmbed: [{
+      id: 'homgame',
+      icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/icon-game.jpeg',
+      src: 'https://wisuda2020-prasetiyamulya.com/game',
+      type: "web",
+      yaw: -0.002,
+      pitch: -0.002,
+      perspective: {
+        radius: 1100
+      },
+      target: "#"
+    }]
   }],
   name: "Virtual Tour PRASMUL",
   settings: {

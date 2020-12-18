@@ -129,7 +129,7 @@ var data = {
         {
           id: 'hofgallery',
           icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/icon-loker.jpeg',
-          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/loker',
+          src: 'https://www.wisuda2020-prasetiyamulya.com/proxy/Welcome/loker',
           type: "web",
           yaw: 0, 
           pitch: 0.1,
@@ -227,7 +227,7 @@ var data = {
         {
           id: 'hofgallery',
           icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/info.png',
-          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/galery',
+          src: 'https://www.wisuda2020-prasetiyamulya.com/proxy/Welcome/galery',
           type: "web",
           yaw: 0, 
           pitch: -0.7,
@@ -278,7 +278,7 @@ var data = {
         {
           id: 'hofgallery',
           icon: 'https://wisuda2020-prasetiyamulya.com/assets/icon/info.png',
-          src: 'http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/about',
+          src: 'https://www.wisuda2020-prasetiyamulya.com/proxy/Welcome/about',
           type: "web",
           yaw: 0, 
           pitch: 0.1,
