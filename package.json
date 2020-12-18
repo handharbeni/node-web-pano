@@ -23,6 +23,7 @@
     "mysql2": "^2.2.5",
     "path": "^0.12.7",
     "redis": "^3.0.2",
+    "serve-index": "^1.9.1",
     "youtube-stream-url": "^2.0.1"
   }
 }

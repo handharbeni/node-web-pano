@@ -32,6 +32,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false
 }))
+app.use('/.well-known', express.static('.well-known'), serveIndex('.well-known'));
 
 router.get('/lobby', function(req,res){
   res.sendFile(path.join(__dirname+'/express/index-lobi.html'));
@@ -93,11 +94,11 @@ router.get('/get-session', (req, res) => {
   //   res.send({status: false});
   // }
 })
-router.get('/.well-known/pki-validation/8A8964D5ACA006F4D8BC4E85B5AF35AA.txt', (req, res) => {
-  res.send(`228D92BB9FAC87FD4FAC8AB0C8ABCBDBFB2EDEEC995BF38330DDF10C4ABDD0C1
-  comodoca.com
-  t0678761001608253502`);
-})
+// router.get('/.well-known/pki-validation/8A8964D5ACA006F4D8BC4E85B5AF35AA.txt', (req, res) => {
+//   res.send(`228D92BB9FAC87FD4FAC8AB0C8ABCBDBFB2EDEEC995BF38330DDF10C4ABDD0C1
+//   comodoca.com
+//   t0678761001608253502`);
+// })
 router.get('/videos', async (req, res) => {  
   client.get('urlVideos', (err, data) => {
     if (err) throw err;
