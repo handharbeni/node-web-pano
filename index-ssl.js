@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const router = express.Router();
 const serveIndex = require('serve-index');
 const cors = require('cors');
-
+const proxy = require('express-http-proxy');
 
 const bodyParser = require('body-parser');
 const redis = require("redis");
@@ -44,6 +44,9 @@ app.use(session({
   resave: false
 }))
 app.use('/.well-known', express.static('.well-known'), serveIndex('.well-known'));
+app.use('/gallery', proxy('http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/galery'));
+app.use('/loker', proxy('http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/loker'));
+app.use('/about', proxy('http://wisuda2020-prasetiyamulya.com:8080/index.php/Welcome/about'));
 
 router.get('/lobby', function(req,res){
   res.sendFile(path.join(__dirname+'/express/index-lobi.html'));
